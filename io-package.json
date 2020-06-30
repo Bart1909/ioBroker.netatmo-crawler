@@ -117,7 +117,7 @@
         "enabled": true,
         "extIcon": "https://raw.githubusercontent.com/Bart1909/ioBroker.netatmo-crawler/master/admin/netatmo-crawler.png",
         "readme": "https://github.com/Bart1909/ioBroker.netatmo-crawler/blob/master/README.md",
-        "loglevel": "debug",
+        "loglevel": "info",
         "mode": "schedule",
         "schedule": "*/5 * * * *",
         "type": "weather",
@@ -125,11 +125,9 @@
         "connectionType": "cloud",
         "dataSource": "poll",
         "materialize": true,
-        "dependencies": [
-            {
-                "js-controller": ">=1.4.2"
-            }
-        ]
+        "dependencies": [{
+            "js-controller": ">=1.4.2"
+        }]
     },
     "native": {
         "station1": "",
