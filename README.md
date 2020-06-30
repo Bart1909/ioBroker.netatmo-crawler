@@ -39,6 +39,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 ## Changelog
 
+### 0.1.1
+* (Bart19) removes files from archive which are unnecessary
 ### 0.1.0
 * (Bart19) implements automatic tests
 ### 0.0.8

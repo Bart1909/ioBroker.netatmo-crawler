@@ -110,6 +110,18 @@
                 "es": "implementa pruebas automáticas",
                 "pl": "wdraża testy automatyczne",
                 "zh-cn": "实施自动测试"
+            },
+            "0.1.1": {
+                "en": "removes files from archive which are unnecessary",
+                "de": "Entfernt unnötige Dateien aus dem Archiv",
+                "ru": "удаляет файлы из архива, которые не нужны",
+                "pt": "remove os arquivos do arquivo desnecessários",
+                "nl": "verwijdert bestanden uit het archief die niet nodig zijn",
+                "fr": "supprime les fichiers inutiles des archives",
+                "it": "rimuove i file dall'archivio che non sono necessari",
+                "es": "elimina archivos del archivo que son innecesarios",
+                "pl": "usuwa niepotrzebne pliki z archiwum",
+                "zh-cn": "从存档中删除不需要的文件"
             }
         },
         "title": "Netatmo Crawler",
@@ -161,11 +173,9 @@
         "connectionType": "cloud",
         "dataSource": "poll",
         "materialize": true,
-        "dependencies": [
-            {
-                "js-controller": ">=1.4.2"
-            }
-        ]
+        "dependencies": [{
+            "js-controller": ">=1.4.2"
+        }]
     },
     "native": {
         "station1": "",
