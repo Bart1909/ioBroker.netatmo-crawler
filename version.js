@@ -5,7 +5,7 @@ var myArgs = process.argv.slice(2);
 
 ioPackage.common.version = myArgs[0];
 
-fs.writeFile(fileName, JSON.stringify(ioPackage), function writeJSON(err) {
+fs.writeFile(fileName, JSON.stringify(ioPackage, null, 4), function writeJSON(err) {
     if (err) return console.log(err);
     console.log('writing to ' + fileName);
 });
