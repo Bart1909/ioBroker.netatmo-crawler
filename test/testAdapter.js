@@ -101,54 +101,54 @@ describe('Test ' + adapterShortName + ' adapter', function() {
     /*
         ENABLE THIS WHEN ADAPTER RUNS IN DEAMON MODE TO CHECK THAT IT HAS STARTED SUCCESSFULLY
     */
-    /*
-     it('Test ' + adapterShortName + ' adapter: Check if adapter started', function(done) {
-         this.timeout(60000);
-         checkConnectionOfAdapter(function(res) {
-             if (res) console.log(res);
-             expect(res).not.to.be.equal('Cannot check connection');
-             objects.setObject('system.adapter.test.0', {
-                     common: {
 
-                     },
-                     type: 'instance'
-                 },
-                 function() {
-                     states.subscribeMessage('system.adapter.test.0');
-                     done();
-                 });
-         });
-     });
-   
+    it('Test ' + adapterShortName + ' adapter: Check if adapter started', function(done) {
+        this.timeout(60000);
+        checkConnectionOfAdapter(function(res) {
+            if (res) console.log(res);
+            expect(res).not.to.be.equal('Cannot check connection');
+            objects.setObject('system.adapter.test.0', {
+                    common: {
 
-    it('Test ' + adapterShortName + ': check states', function(done) {
-        this.timeout(15000);
-
-        setTimeout(function() {
-            states.getState('weatherunderground.0.forecast.current.temp', function(err, state) {
-                expect(err).to.be.not.ok;
-                expect(state).to.be.ok;
-                expect(state.val).to.be.not.undefined;
-                expect(state.val).to.be.a('number');
-
-                states.getState('weatherunderground.0.forecast.current.windDegrees', function(err, state) {
-                    expect(err).to.be.not.ok;
-                    expect(state).to.be.ok;
-                    expect(state.val).to.be.not.undefined;
-                    expect(state.val).to.be.a('number');
-
-                    states.getState('weatherunderground.0.forecast.current.feelsLike', function(err, state) {
-                        expect(err).to.be.not.ok;
-                        expect(state).to.be.ok;
-                        expect(state.val).to.be.not.undefined;
-                        expect(state.val).to.be.a('number');
-                        done();
-                    });
+                    },
+                    type: 'instance'
+                },
+                function() {
+                    states.subscribeMessage('system.adapter.test.0');
+                    done();
                 });
-            });
-        }, 10000);
+        });
     });
-      */
+    /*
+
+     it('Test ' + adapterShortName + ': check states', function(done) {
+         this.timeout(15000);
+
+         setTimeout(function() {
+             states.getState('weatherunderground.0.forecast.current.temp', function(err, state) {
+                 expect(err).to.be.not.ok;
+                 expect(state).to.be.ok;
+                 expect(state.val).to.be.not.undefined;
+                 expect(state.val).to.be.a('number');
+
+                 states.getState('weatherunderground.0.forecast.current.windDegrees', function(err, state) {
+                     expect(err).to.be.not.ok;
+                     expect(state).to.be.ok;
+                     expect(state.val).to.be.not.undefined;
+                     expect(state.val).to.be.a('number');
+
+                     states.getState('weatherunderground.0.forecast.current.feelsLike', function(err, state) {
+                         expect(err).to.be.not.ok;
+                         expect(state).to.be.ok;
+                         expect(state.val).to.be.not.undefined;
+                         expect(state.val).to.be.a('number');
+                         done();
+                     });
+                 });
+             });
+         }, 10000);
+     });
+       */
 
     after('Test ' + adapterShortName + ' adapter: Stop js-controller', function(done) {
         this.timeout(10000);
