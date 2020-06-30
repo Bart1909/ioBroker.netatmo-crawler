@@ -98,6 +98,18 @@
                 "es": "logotipo de actualizaciones",
                 "pl": "aktualizuje logo",
                 "zh-cn": "更新徽标"
+            },
+            "0.1.0": {
+                "en": "implements automatic tests",
+                "de": "implementiert automatische Tests",
+                "ru": "реализует автоматические тесты",
+                "pt": "implementa testes automáticos",
+                "nl": "voert automatische tests uit",
+                "fr": "implémente des tests automatiques",
+                "it": "implementa test automatici",
+                "es": "implementa pruebas automáticas",
+                "pl": "wdraża testy automatyczne",
+                "zh-cn": "实施自动测试"
             }
         },
         "title": "Netatmo Crawler",

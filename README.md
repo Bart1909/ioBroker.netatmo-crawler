@@ -7,10 +7,11 @@
 ![Number of Installations (stable)](http://iobroker.live/badges/netatmo-crawler-stable.svg) -->
 [![Dependency Status](https://img.shields.io/david/Bart1909/iobroker.netatmo-crawler.svg)](https://david-dm.org/Bart1909/iobroker.netatmo-crawler)
 [![Known Vulnerabilities](https://snyk.io/test/github/Bart1909/ioBroker.netatmo-crawler/badge.svg)](https://snyk.io/test/github/Bart1909/ioBroker.netatmo-crawler)
+[![Build Status](https://travis-ci.org/Bart1909/ioBroker.netatmo-crawler.svg?branch=master)](https://travis-ci.org/Bart1909/ioBroker.netatmo-crawler)
 
 [![NPM](https://nodei.co/npm/iobroker.netatmo-crawler.png?downloads=true)](https://nodei.co/npm/iobroker.netatmo-crawler/)
 
-[![Build Status](https://travis-ci.org/Bart1909/ioBroker.netatmo-crawler.svg?branch=master)](https://travis-ci.org/Bart1909/ioBroker.netatmo-crawler)
+
 
 ## netatmo-crawler adapter for ioBroker
 
@@ -38,6 +39,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 ## Changelog
 
+### 0.1.0
+* (Bart19) implements automatic tests
 ### 0.0.8
 * (Bart19) updates logo
 ### 0.0.7
