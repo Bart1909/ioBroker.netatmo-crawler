@@ -50,7 +50,7 @@
         "test:package": "mocha test/package --exit",
         "test:unit": "mocha test/unit --exit",
         "test:integration": "mocha test/integration --exit",
-        "test": "npm run test:js && npm run test:package",
+        "test": "node node_modules/mocha/bin/mocha",
         "lint": "eslint",
         "version": "node ./version.js $npm_package_version && git add io-package.json && git commit -m $npm_package_version",
         "postversion": "git push --follow-tags"
