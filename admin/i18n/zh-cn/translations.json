@@ -1,0 +1,7 @@
+{
+    "netatmo-crawler adapter settings": "netatmo-crawler的适配器设置",
+    "station1": "输入要从中获取信息的Netatmo Station的URL。",
+    "station2": "另一个站点的附加URL。",
+    "station3": "另一个站点的附加URL。",
+    "station4": "另一个站点的附加URL。"
+}

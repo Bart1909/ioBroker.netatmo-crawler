@@ -1,0 +1,7 @@
+{
+    "netatmo-crawler adapter settings": "Adapter settings for netatmo-crawler",
+    "station1": "Enter the url to the Netatmo Station you want to get information from.",
+    "station2": "Addional url for another station. Can be empty.",
+    "station3": "Addional url for another station. Can be empty.",
+    "station4": "Addional url for another station. Can be empty."
+}
