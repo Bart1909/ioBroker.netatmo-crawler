@@ -38,6 +38,42 @@
                 "es": "algunas correcciones de errores",
                 "pl": "niektóre poprawki",
                 "zh-cn": "一些错误修正"
+            },
+            "0.0.4": {
+                "en": "some bugfixes",
+                "de": "einige Bugfixes",
+                "ru": "некоторые исправления",
+                "pt": "algumas correções",
+                "nl": "enkele bugfixes",
+                "fr": "quelques corrections de bugs",
+                "it": "alcune correzioni",
+                "es": "algunas correcciones de errores",
+                "pl": "niektóre poprawki",
+                "zh-cn": "一些错误修正"
+            },
+            "0.0.5": {
+                "en": "some bugfixes",
+                "de": "einige Bugfixes",
+                "ru": "некоторые исправления",
+                "pt": "algumas correções",
+                "nl": "enkele bugfixes",
+                "fr": "quelques corrections de bugs",
+                "it": "alcune correzioni",
+                "es": "algunas correcciones de errores",
+                "pl": "niektóre poprawki",
+                "zh-cn": "一些错误修正"
+            },
+            "0.0.6": {
+                "en": "updates description",
+                "de": "aktualisiert die Beschreibung",
+                "ru": "описание обновлений",
+                "pt": "atualizações descrição",
+                "nl": "werkt beschrijving bij",
+                "fr": "description des mises à jour",
+                "it": "descrizione degli aggiornamenti",
+                "es": "descripción de actualizaciones",
+                "pl": "aktualizuje opis",
+                "zh-cn": "更新说明"
             }
         },
         "title": "Netatmo Crawler",

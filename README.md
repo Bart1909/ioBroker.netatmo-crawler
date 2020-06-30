@@ -36,6 +36,14 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 ## Changelog
 
+### 0.0.6
+* (Bart19) updates description
+### 0.0.5
+* (Bart19) bugfixes
+### 0.0.4
+* (Bart19) bugfixes
+### 0.0.3
+* (Bart19) bugfixes
 ### 0.0.2
 * (Bart19) bugfixes
 ### 0.0.1
