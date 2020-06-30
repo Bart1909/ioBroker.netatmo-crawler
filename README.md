@@ -36,6 +36,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 ## Changelog
 
+### 0.0.7
+* (Bart19) changes loglevel
 ### 0.0.6
 * (Bart19) updates description
 ### 0.0.5

@@ -74,6 +74,9 @@
                 "es": "descripción de actualizaciones",
                 "pl": "aktualizuje opis",
                 "zh-cn": "更新说明"
+            },
+            "0.0.7": {
+                "en": "changes loglevel"
             }
         },
         "title": "Netatmo Crawler",
