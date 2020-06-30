@@ -10,6 +10,8 @@
 
 [![NPM](https://nodei.co/npm/iobroker.netatmo-crawler.png?downloads=true)](https://nodei.co/npm/iobroker.netatmo-crawler/)
 
+[![Build Status](https://travis-ci.org/Bart1909/ioBroker.netatmo-crawler.svg?branch=master)](https://travis-ci.org/Bart1909/ioBroker.netatmo-crawler)
+
 ## netatmo-crawler adapter for ioBroker
 
 Crawls information from public netatmo stations
