@@ -52,6 +52,7 @@
         "test:integration": "mocha test/integration --exit",
         "test": "npm run test:js && npm run test:package",
         "lint": "eslint",
+        "version": "node ./version.js $npm_package_version && git add io-package.json && git commit -m '$npm_package_version'",
         "postversion": "git push --follow-tags"
     },
     "bugs": {
