@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "netatmo-crawler",
-        "version": "0.0.7",
+        "version": "0.0.8",
         "news": {
             "0.0.1": {
                 "en": "initial release",
@@ -149,9 +149,11 @@
         "connectionType": "cloud",
         "dataSource": "poll",
         "materialize": true,
-        "dependencies": [{
-            "js-controller": ">=1.4.2"
-        }]
+        "dependencies": [
+            {
+                "js-controller": ">=1.4.2"
+            }
+        ]
     },
     "native": {
         "station1": "",
