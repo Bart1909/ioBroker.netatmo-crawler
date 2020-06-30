@@ -1,4 +1,4 @@
-![Logo](admin/netatmo-crawler.png)
+![Logo](img/netatmo-logo.png)
 # ioBroker.netatmo-crawler
 
 [![NPM version](http://img.shields.io/npm/v/iobroker.netatmo-crawler.svg)](https://www.npmjs.com/package/iobroker.netatmo-crawler)
@@ -36,6 +36,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 ## Changelog
 
+### 0.0.8
+* (Bart19) updates logo
 ### 0.0.7
 * (Bart19) changes loglevel
 ### 0.0.6

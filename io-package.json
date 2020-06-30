@@ -76,7 +76,28 @@
                 "zh-cn": "更新说明"
             },
             "0.0.7": {
-                "en": "changes loglevel"
+                "en": "changes loglevel",
+                "de": "ändert loglevel",
+                "ru": "изменения лог-уровня",
+                "pt": "muda o nível de log",
+                "nl": "verandert loglevel",
+                "fr": "change le niveau de journalisation",
+                "it": "cambia loglevel",
+                "es": "cambia el nivel de registro",
+                "pl": "zmienia loglevel",
+                "zh-cn": "更改日志级别"
+            },
+            "0.0.8": {
+                "en": "updates logo",
+                "de": "aktualisiert das Logo",
+                "ru": "обновляет логотип",
+                "pt": "atualizações de logotipo",
+                "nl": "updates logo",
+                "fr": "met à jour le logo",
+                "it": "logo aggiornamenti",
+                "es": "logotipo de actualizaciones",
+                "pl": "aktualizuje logo",
+                "zh-cn": "更新徽标"
             }
         },
         "title": "Netatmo Crawler",
@@ -128,11 +149,9 @@
         "connectionType": "cloud",
         "dataSource": "poll",
         "materialize": true,
-        "dependencies": [
-            {
-                "js-controller": ">=1.4.2"
-            }
-        ]
+        "dependencies": [{
+            "js-controller": ">=1.4.2"
+        }]
     },
     "native": {
         "station1": "",
