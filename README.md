@@ -30,8 +30,14 @@ To find the url of your preferred weather station, follow these steps:
 
    ![Insert](img/share.jpg)
 
+## Credits
+
+Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea and support!
+
 ## Changelog
 
+### 0.0.2
+* (Bart19) bugfixes
 ### 0.0.1
 * (Bart19) initial release
 

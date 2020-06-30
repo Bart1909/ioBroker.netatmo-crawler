@@ -116,6 +116,8 @@ class NetatmoCrawler extends utils.Adapter {
 
         // result = await this.checkGroupAsync('admin', 'admin');
         // this.log.info('check group user admin group admin: ' + result);
+        this.log.debug("all done, exiting");
+        this.terminate ? this.terminate(0) : process.exit(0);
     }
 
     /**
@@ -239,10 +241,10 @@ class NetatmoCrawler extends utils.Adapter {
             const stateName = 'stationData.' + id + '.' + measureName;
             switch (measureName) {
                 case 'rain':
-                    await this.createOwnState(stateName, 'mm', 'number', 'weather.rain');
+                    await this.createOwnState(stateName, 'mm', 'number', 'value.rain.hour');
                     break;
                 case 'rain_today':
-                    await this.createOwnState(stateName, 'mm', 'number', 'weather.rain');
+                    await this.createOwnState(stateName, 'mm', 'number', 'value.rain.today');
                     break;
                 case 'pressure':
                     await this.createOwnState(stateName, 'mBar', 'number', 'value.pressure');
@@ -254,16 +256,16 @@ class NetatmoCrawler extends utils.Adapter {
                     await this.createOwnState(stateName, '%', 'number', 'value.humidity');
                     break;
                 case 'windangle':
-                    await this.createOwnState(stateName, null, 'string', 'state');
+                    await this.createOwnState(stateName, null, 'string', 'weather.direction.wind ');
                     break;
                 case 'windstrength':
-                    await this.createOwnState(stateName, 'km/h', 'number', 'state');
+                    await this.createOwnState(stateName, 'km/h', 'number', 'value.speed.wind');
                     break;
                 case 'guststrength':
-                    await this.createOwnState(stateName, 'km/h', 'number', 'state');
+                    await this.createOwnState(stateName, 'km/h', 'number', 'value.speed.wind.gust');
                     break;
                 default:
-                    await this.createOwnState(stateName, null, 'string', 'state');
+                    await this.createOwnState(stateName, null, 'string', 'text');
                     break;
             }
             await this.setStateAsync(stateName, measureValue);
