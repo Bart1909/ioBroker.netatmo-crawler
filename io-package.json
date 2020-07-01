@@ -122,6 +122,9 @@
                 "es": "elimina archivos del archivo que son innecesarios",
                 "pl": "usuwa niepotrzebne pliki z archiwum",
                 "zh-cn": "从存档中删除不需要的文件"
+            },
+            "0.1.2": {
+                "en": "fix for station4 and introduces allowInit, so adapter will run once on config edits"
             }
         },
         "title": "Netatmo Crawler",
@@ -150,7 +153,8 @@
             "zh-cn": "从Netatmo公用站检索信息"
         },
         "authors": [
-            "Bart19 <webmaster@bart19.de>"
+            "Bart19 <webmaster@bart19.de>",
+            "Backfisch88 <backfisch88@bart19.de>"
         ],
         "keywords": [
             "netatmo",
@@ -168,16 +172,15 @@
         "loglevel": "info",
         "mode": "schedule",
         "schedule": "*/5 * * * *",
+        "allowInit": true,
         "type": "weather",
         "compact": true,
         "connectionType": "cloud",
         "dataSource": "poll",
         "materialize": true,
-        "dependencies": [
-            {
-                "js-controller": ">=1.4.2"
-            }
-        ]
+        "dependencies": [{
+            "js-controller": ">=1.4.2"
+        }]
     },
     "native": {
         "station1": "",

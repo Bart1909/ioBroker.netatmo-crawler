@@ -39,6 +39,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 ## Changelog
 
+### 0.1.2
+* (Bart19) fix for station4 and introduces allowInit, so adapter will run once on config edits
 ### 0.1.1
 * (Bart19) removes files from archive which are unnecessary
 ### 0.1.0
