@@ -40,25 +40,20 @@ class NetatmoCrawler extends utils.Adapter {
 
         // The adapters config (in the instance object everything under the attribute 'native') is accessible via
         // this.config:
-        this.log.info('config station1: ' + this.config.station1);
-        this.log.info('config station2: ' + this.config.station2);
-        this.log.info('config station3: ' + this.config.station3);
-        this.log.info('config station4: ' + this.config.station4);
-        this.log.debug('Debug message');
+        this.log.info('config stationUrls: ' + this.config.stationUrls);
+        this.log.info('config stationNameType: ' + this.config.stationNameType);
+        const regex = /(https:\/\/weathermap\.netatmo\.com\/\/[-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g;
+        const stationUrls = this.config.stationUrls.match(regex) || [];
+
 
         let token = await this.getAuthorizationToken();
         const checkUrl = 'https://weathermap.netatmo.com/';
-        if (this.config.station1 && this.config.station1.startsWith(checkUrl)) {
-            await this.getStationData(1, this.config.station1, token);
-        }
-        if (this.config.station2 && this.config.station2.startsWith(checkUrl)) {
-            await this.getStationData(2, this.config.station2, token);
-        }
-        if (this.config.station3 && this.config.station3.startsWith(checkUrl)) {
-            await this.getStationData(3, this.config.station3, token);
-        }
-        if (this.config.station4 && this.config.station4.startsWith(checkUrl)) {
-            await this.getStationData(4, this.config.station4, token);
+
+        for (const [counter, stationUrl] of stationUrls.entries()) {
+            this.log.debug('Working with stationUrl: ' + stationUrl);
+            if (stationUrl) {
+                await this.getStationData((counter + 1), stationUrl, token, this.config.stationNameType);
+            }
         }
 
         this.log.debug("all done, exiting");
@@ -84,7 +79,7 @@ class NetatmoCrawler extends utils.Adapter {
     }
 
 
-    async getStationData(id, url, token) {
+    async getStationData(id, url, token, stationNameType) {
         logger.info('Going to get information for station: ' + id);
         let stationid = this.getStationId(url);
         let stationData = await this.getPublicData(stationid, token);
@@ -95,6 +90,9 @@ class NetatmoCrawler extends utils.Adapter {
         }
         if (stationData && stationData.measures) {
             logger.debug('Saving station data for station: ' + id);
+            if (stationNameType === 'id') {
+                id = stationid;
+            }
             await this.saveStationData(id, stationData);
 
             const measureTypes = ['temperature', 'rain', 'pressure', 'humidity', 'windangle', 'guststrength', 'windstrength'];

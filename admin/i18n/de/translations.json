@@ -1,7 +1,7 @@
 {
-    "netatmo-crawler adapter settings": "Adaptereinstellungen für netatmo-crawler",
-    "station1": "Geben Sie die URL der Netatmo Station ein, von der Sie Informationen erhalten möchten.",
-    "station2": "Zusätzliche URL für eine andere Station. ",
-    "station3": "Zusätzliche URL für eine andere Station. ",
-    "station4": "Zusätzliche URL für eine andere Station. "
+    "netatmo-crawler adapter settings": "Adaptereinstellungen für Netatmo-Crawler",
+    "stationNameType": "Wählen Sie aus, wie die Objekte für jede Station benannt werden sollen",
+    "stationNameTypeCounter": "Zähler verwenden, z.B. 1",
+    "stationNameTypeId": "Verwenden Sie die ID der Station, z.B. 70: 3f: ee: 7c: 37: 6c",
+    "stationUrls": "Geben Sie die URLs für die Stationen ein. Sie können mehrere Stationen eingeben. Eine pro Zeile"
 }

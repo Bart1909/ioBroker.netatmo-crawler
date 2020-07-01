@@ -124,7 +124,28 @@
                 "zh-cn": "从存档中删除不需要的文件"
             },
             "0.1.2": {
-                "en": "fix for station4 and introduces allowInit, so adapter will run once on config edits"
+                "en": "fix for station4 and introduces allowInit, so adapter will run once on config edits",
+                "de": "Fix für Station4 und Einführung von allowInit, sodass der Adapter bei Konfigurationsänderungen einmal ausgeführt wird",
+                "ru": "исправление для станции 4 и введение allowInit, поэтому адаптер будет запускаться один раз при изменении конфигурации",
+                "pt": "correção para station4 e introduz allowInit, para que o adaptador seja executado uma vez nas edições de configuração",
+                "nl": "fix voor station4 en introduceert allowInit, dus adapter zal eenmaal draaien bij configuratie-bewerkingen",
+                "fr": "correction pour station4 et introduit allowInit, donc l'adaptateur s'exécutera une fois lors des modifications de configuration",
+                "it": "risolto per station4 e introduce allowInit, quindi l'adattatore verrà eseguito una volta sulle modifiche alla configurazione",
+                "es": "arregla la estación 4 e introduce allowInit, por lo que el adaptador se ejecutará una vez en las ediciones de configuración",
+                "pl": "naprawiono dla station4 i wprowadza allowInit, więc adapter będzie działał raz podczas edycji konfiguracji",
+                "zh-cn": "修复了station4并引入了allowInit，因此适配器将在配置编辑中运行一次"
+            },
+            "0.2.0": {
+                "en": "Changes administration view. Now you can enter as many station urls as you want. In addition, you can select, how the data should be stored",
+                "de": "Ändert die Administrationsansicht. Jetzt können Sie so viele Stations-URLs eingeben, wie Sie möchten. Außerdem können Sie auswählen, wie die Daten gespeichert werden sollen",
+                "ru": "Изменяет вид администрации. Теперь вы можете ввести столько адресов станций, сколько захотите. Кроме того, вы можете выбрать способ хранения данных.",
+                "pt": "Altera a exibição da administração. Agora você pode inserir quantos URLs da estação desejar. Além disso, você pode selecionar como os dados devem ser armazenados",
+                "nl": "Wijzigt administratieoverzicht. Nu kunt u zoveel stations-URL's invoeren als u wilt. Daarnaast kunt u selecteren hoe de gegevens moeten worden opgeslagen",
+                "fr": "Modifie la vue d'administration. Vous pouvez maintenant saisir autant d'URL de station que vous le souhaitez. De plus, vous pouvez sélectionner la façon dont les données doivent être stockées",
+                "it": "Cambia la vista di amministrazione. Ora puoi inserire tutti gli URL di stazione che desideri. Inoltre, è possibile selezionare come archiviare i dati",
+                "es": "Cambios en la vista de administración. Ahora puede ingresar tantas URL de estación como desee. Además, puede seleccionar cómo deben almacenarse los datos",
+                "pl": "Zmienia widok administracji. Teraz możesz wprowadzić tyle adresów URL stacji, ile chcesz. Ponadto możesz wybrać sposób przechowywania danych",
+                "zh-cn": "更改管理视图。现在，您可以输入所需的任意多个站点URL。另外，您可以选择如何存储数据"
             }
         },
         "title": "Netatmo Crawler",
@@ -185,10 +206,8 @@
         ]
     },
     "native": {
-        "station1": "",
-        "station2": "",
-        "station3": "",
-        "station4": ""
+        "stationUrls": "",
+        "stationNameType": "counter"
     },
     "objects": [],
     "instanceObjects": []
