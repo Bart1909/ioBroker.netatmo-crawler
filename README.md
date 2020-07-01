@@ -39,6 +39,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 ## Changelog
 
+### 0.2.0
+* (Bart19) changes admin view. Now you can enter as many station urls as you want. In addition, you can select, how the data should be stored
 ### 0.1.2
 * (Bart19) fix for station4 and introduces allowInit, so adapter will run once on config edits
 ### 0.1.1
