@@ -4,6 +4,7 @@ node_modules/
 nbproject/
 .vs*/
 *.code-workspace
+.DS_Store
 Thumbs.db
 gulpfile.js
 
