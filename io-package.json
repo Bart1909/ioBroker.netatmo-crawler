@@ -146,6 +146,18 @@
                 "es": "Cambios en la vista de administración. Ahora puede ingresar tantas URL de estación como desee. Además, puede seleccionar cómo deben almacenarse los datos",
                 "pl": "Zmienia widok administracji. Teraz możesz wprowadzić tyle adresów URL stacji, ile chcesz. Ponadto możesz wybrać sposób przechowywania danych",
                 "zh-cn": "更改管理视图。现在，您可以输入所需的任意多个站点URL。另外，您可以选择如何存储数据"
+            },
+            "0.3.0": {
+                "en": "Adds timestamps, when last info retrieved from Netatmo and timestamp, when each measure was updated last. In addition, was rain_yesterday added",
+                "de": "Fügt Zeitstempel hinzu, wenn die letzten von Netatmo abgerufenen Informationen und Zeitstempel, wenn jede Kennzahl zuletzt aktualisiert wurde. Außerdem wurde rain_yesterday hinzugefügt",
+                "ru": "Добавляет временные метки, когда последняя информация извлекается из Netatmo, и временные метки, когда каждый показатель обновлялся последним. Кроме того, был добавлен дождь_вчера",
+                "pt": "Adiciona carimbos de data e hora, quando as últimas informações são recuperadas do Netatmo e carimbo de data e hora, quando cada medida é atualizada pela última vez. Além disso, foi adicionado rain_yesterday",
+                "nl": "Voegt tijdstempels toe, wanneer laatste informatie opgehaald uit Netatmo en tijdstempel, wanneer elke maat voor het laatst werd bijgewerkt. Bovendien werd gisteren regen toegevoegd",
+                "fr": "Ajoute des horodatages, lorsque les dernières informations sont récupérées de Netatmo et de l'horodatage, lorsque chaque mesure a été mise à jour en dernier. De plus, la pluie a été ajoutée hier",
+                "it": "Aggiunge i timestamp, quando le ultime informazioni recuperate da Netatmo e il timestamp, quando ogni misura è stata aggiornata per ultima. Inoltre, è stato aggiunto rain_yesterday",
+                "es": "Agrega marcas de tiempo, cuando la última información recuperada de Netatmo y la marca de tiempo, cuando cada medida se actualizó por última vez. Además, se agregó rain_yesterday",
+                "pl": "Dodaje znaczniki czasu, gdy ostatnia informacja została pobrana z Netatmo i znacznik czasu, kiedy każda miara była ostatnio aktualizowana. Ponadto dodano rain_yesterday",
+                "zh-cn": "从Netatmo检索到最后一个信息时添加时间戳，最后一次更新每个度量时则添加时间戳。另外，是否添加了rain_yesterday"
             }
         },
         "title": "Netatmo Crawler",
@@ -201,7 +213,7 @@
         "materialize": true,
         "dependencies": [
             {
-                "js-controller": ">=1.4.2"
+                "js-controller": ">=2.0.0"
             }
         ]
     },

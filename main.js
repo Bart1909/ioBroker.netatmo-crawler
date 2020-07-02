@@ -45,15 +45,16 @@ class NetatmoCrawler extends utils.Adapter {
         const regex = /(https:\/\/weathermap\.netatmo\.com\/\/[-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g;
         const stationUrls = this.config.stationUrls.match(regex) || [];
 
-
-        let token = await this.getAuthorizationToken();
-        const checkUrl = 'https://weathermap.netatmo.com/';
-
-        for (const [counter, stationUrl] of stationUrls.entries()) {
-            this.log.debug('Working with stationUrl: ' + stationUrl);
-            if (stationUrl) {
-                await this.getStationData((counter + 1), stationUrl, token, this.config.stationNameType);
+        try {
+            let token = await this.getAuthorizationToken();
+            for (const [counter, stationUrl] of stationUrls.entries()) {
+                this.log.debug('Working with stationUrl: ' + stationUrl);
+                if (stationUrl) {
+                    await this.getStationData((counter + 1), stationUrl, token, this.config.stationNameType);
+                }
             }
+        } catch (e) {
+            this.log.error('Error while running Netatmo Crawler. Error Message:' + e);
         }
 
         this.log.debug("all done, exiting");
@@ -84,12 +85,12 @@ class NetatmoCrawler extends utils.Adapter {
         let stationid = this.getStationId(url);
         let stationData = await this.getPublicData(stationid, token);
         if (!stationData) {
-            logger.debug('Got no station data. Trying again');
+            logger.info('Got no station data. Trying again');
             await this.sleep(1000);
             stationData = await this.getPublicData(stationid, token);
         }
         if (stationData && stationData.measures) {
-            logger.debug('Saving station data for station: ' + id);
+            logger.info('Saving station data for station: ' + id);
             if (stationNameType === 'id') {
                 id = stationid;
             }
@@ -100,6 +101,10 @@ class NetatmoCrawler extends utils.Adapter {
             for (const measure of measureTypes) {
                 if (this.hasMeasure(stationData.measures, measure)) {
                     logger.debug('Saving data for station: ' + id + ' and measure: ' + measure);
+                    let measureLastUpdated = this.getMeasureTimestamp(stationData.measures, measure);
+                    if (measureLastUpdated) {
+                        await this.saveTimestamp(id, measure, measureLastUpdated);
+                    }
                     if (measure === 'windangle') {
                         await this.saveMeasure(id, measure, this.getWindrichtungsName(this.getMeasureValue(stationData.measures, measure)));
                     } else {
@@ -108,17 +113,32 @@ class NetatmoCrawler extends utils.Adapter {
 
                     if (measure === 'rain') {
                         let rainToday = await this.getRainToday(stationData.measures, stationid, token);
-                        if (!rainToday) {
+                        if (rainToday == null) {
                             await this.sleep(1000);
                             rainToday = await this.getRainToday(stationData.measures, stationid, token);
                         }
-                        await this.saveMeasure(id, 'rain_today', rainToday);
-                        logger.debug('Saved rain_today for station: ' + id);
+                        if (rainToday !== null) {
+                            await this.saveMeasure(id, 'rain_today', rainToday);
+                            logger.debug('Saved rain_today for station: ' + id);
+                            await this.saveMeasure(id, 'lastUpdated.rain_today', moment().valueOf());
+                        }
+                        let rainYesterday = await this.getRainYesterday(stationData.measures, stationid, token);
+                        if (rainYesterday == null) {
+                            await this.sleep(1000);
+                            rainYesterday = await this.getRainYesterday(stationData.measures, stationid, token);
+                        }
+                        if (rainYesterday !== null) {
+                            await this.saveMeasure(id, 'rain_yesterday', rainToday);
+                            logger.debug('Saved rain_yesterday for station: ' + id);
+                            await this.saveMeasure(id, 'lastUpdated.rain_yesterday', moment().valueOf());
+                        }
                     }
                 }
             }
 
 
+        } else {
+            throw 'Did not get any values for station ' + stationid;
         }
     }
 
@@ -127,6 +147,7 @@ class NetatmoCrawler extends utils.Adapter {
         await this.saveMeasure(id, 'info.city', stationData['place']['city']);
         await this.saveMeasure(id, 'info.country', stationData['place']['country']);
         await this.saveMeasure(id, 'info.street', stationData['place']['street']);
+        await this.saveMeasure(id, 'info.lastInfoRetrieved', moment().valueOf());
 
     }
 
@@ -139,6 +160,9 @@ class NetatmoCrawler extends utils.Adapter {
                     break;
                 case 'rain_today':
                     await this.createOwnState(stateName, 'mm', 'number', 'value.rain.today');
+                    break;
+                case 'rain_yesterday':
+                    await this.createOwnState(stateName, 'mm', 'number', 'value');
                     break;
                 case 'pressure':
                     await this.createOwnState(stateName, 'mBar', 'number', 'value.pressure');
@@ -158,11 +182,28 @@ class NetatmoCrawler extends utils.Adapter {
                 case 'guststrength':
                     await this.createOwnState(stateName, 'km/h', 'number', 'value.speed.wind.gust');
                     break;
+                case 'info.lastInfoRetrieved':
+                    await this.createOwnState(stateName, null, 'number', 'date');
+                    break;
                 default:
-                    await this.createOwnState(stateName, null, 'string', 'text');
+                    if (measureName.startsWith('lastUpdated')) {
+                        await this.createOwnState(stateName, null, 'number', 'date');
+                    } else {
+                        await this.createOwnState(stateName, null, 'string', 'text');
+                    }
                     break;
             }
             await this.setStateAsync(stateName, measureValue);
+        }
+
+    }
+
+    async saveTimestamp(id, measureName, timestamp) {
+        if (timestamp !== null) {
+            const stateName = 'stationData.' + id + '.lastUpdated.' + measureName;
+            await this.createOwnState(stateName, null, 'number', 'date');
+            timestamp = Number.parseInt(timestamp) * 1000;
+            await this.setStateAsync(stateName, timestamp);
         }
 
     }
@@ -189,7 +230,7 @@ class NetatmoCrawler extends utils.Adapter {
     }
 
     getAuthorizationToken() {
-        return new Promise((res) => {
+        return new Promise((res, rej) => {
             request({
                     url: 'https://weathermap.netatmo.com/',
                     rejectUnauthorized: false,
@@ -197,13 +238,19 @@ class NetatmoCrawler extends utils.Adapter {
                 async function(error, response, body) {
                     if (error) {
                         logger.error('Error: ' + error);
+                        rej(error);
                     }
                     //console.log('Body:' + body);
                     const regex = /window.config.accessToken = "(\w*\|\w*)";/;
                     const match = body.match(regex);
-                    const token = 'Bearer ' + match[1];
-                    logger.debug('Token:' + token);
-                    res(token);
+                    if (match) {
+                        const token = 'Bearer ' + match[1];
+                        logger.debug('Token:' + token);
+                        res(token);
+                    } else {
+                        rej('No authorization token found');
+                    }
+
                 }
             );
         });
@@ -225,9 +272,10 @@ class NetatmoCrawler extends utils.Adapter {
                 async function(error, response, body) {
                     if (error) {
                         logger.error('Error:', error);
+                        rej(error);
                     }
                     if (body.body) {
-                        logger.debug('Body:' + body.body);
+                        logger.debug('Body:' + JSON.stringify(body.body));
 
                         //console.log('Body:' + JSON.stringify(responseBody, null, 4));
                         res(body.body[0]);
@@ -268,8 +316,21 @@ class NetatmoCrawler extends utils.Adapter {
         return null;
     }
 
+    getMeasureTimestamp(measures, measureName) {
+        let measureKey = Object.keys(measures).filter((key) => {
+            return measures[key].type.indexOf(measureName) !== -1;
+        });
+
+        if (Array.isArray(measureKey) && measureKey.length > 0) {
+            let res = measures[measureKey[0]].res;
+            let timeStamp = Object.keys(res)[0];
+            return timeStamp;
+        }
+        return null;
+    }
+
     getRainToday(measures, stationId, token) {
-        return new Promise((res) => {
+        return new Promise((res, rej) => {
             //console.log('Getting data for stationid:' + stationId);
             var start = moment().startOf('day').unix();
             const moduleId = Object.keys(measures).filter((key) => {
@@ -295,16 +356,66 @@ class NetatmoCrawler extends utils.Adapter {
                 async function(error, response, body) {
                     if (error) {
                         logger.error('Error:', error);
+                        rej(error);
                     }
                     if (body.body) {
-                        logger.debug('Body:' + JSON.stringify(body.body));
+                        logger.debug('Body Rain_Today:' + JSON.stringify(body.body));
 
                         //console.log('Body:' + JSON.stringify(responseBody, null, 4));
                         const rainToday = body.body[0].value[0][0];
+                        logger.debug('Rain Today for Station ' + stationId + ' is: ' + rainToday);
                         res(rainToday);
                         //res(body)
                     } else {
-                        logger.info('No body:' + JSON.stringify(body));
+                        logger.info('No body in Rain_Today:' + JSON.stringify(body));
+                        res();
+                    }
+                }
+            );
+        });
+    }
+
+    getRainYesterday(measures, stationId, token) {
+        return new Promise((res, rej) => {
+            //console.log('Getting data for stationid:' + stationId);
+            var start = moment().subtract(1, 'days').startOf('day').unix();
+            var end = moment().subtract(1, 'days').endOf('day').unix();
+            const moduleId = Object.keys(measures).filter((key) => {
+                return measures[key].type.indexOf('rain') !== -1;
+            })[0];
+            const inputObj = {
+                device_id: stationId,
+                module_id: moduleId,
+                scale: '1day',
+                type: 'sum_rain',
+                real_time: true,
+                date_begin: start.toString(),
+                date_end: end.toString()
+            };
+            //console.log('InputObj:' + JSON.stringify(inputObj));
+            request.post({
+                    url: 'https://app.netatmo.net/api/getmeasure',
+                    rejectUnauthorized: false,
+                    headers: {
+                        Authorization: token,
+                    },
+                    json: inputObj,
+                },
+                async function(error, response, body) {
+                    if (error) {
+                        logger.error('Error:', error);
+                        rej(error);
+                    }
+                    if (body.body) {
+                        logger.debug('Body Rain_Yesterday:' + JSON.stringify(body.body));
+
+                        //console.log('Body:' + JSON.stringify(responseBody, null, 4));
+                        const rainYesterday = body.body[0].value[0][0];
+                        logger.debug('Rain Yesterday for Station ' + stationId + ' is: ' + rainYesterday);
+                        res(rainYesterday);
+                        //res(body)
+                    } else {
+                        logger.info('No body in Rain_Yesterday:' + JSON.stringify(body));
                         res();
                     }
                 }
