@@ -50,7 +50,11 @@ class NetatmoCrawler extends utils.Adapter {
             for (const [counter, stationUrl] of stationUrls.entries()) {
                 this.log.debug('Working with stationUrl: ' + stationUrl);
                 if (stationUrl) {
-                    await this.getStationData((counter + 1), stationUrl, token, this.config.stationNameType);
+                    try {
+                        await this.getStationData((counter + 1), stationUrl, token, this.config.stationNameType);
+                    } catch (e) {
+                        this.log.warn('Could not work with station');
+                    }
                 }
             }
         } catch (e) {
@@ -278,7 +282,12 @@ class NetatmoCrawler extends utils.Adapter {
                         logger.debug('Body:' + JSON.stringify(body.body));
 
                         //console.log('Body:' + JSON.stringify(responseBody, null, 4));
-                        res(body.body[0]);
+                        try {
+                            res(body.body[0]);
+                        } catch (e) {
+                            logger.warn('Could not get Data for station ' + stationId + ': ' + e);
+                            res();
+                        }
                         //res(body)
                     } else {
                         logger.info('No body:' + JSON.stringify(body));
@@ -362,9 +371,14 @@ class NetatmoCrawler extends utils.Adapter {
                         logger.debug('Body Rain_Today:' + JSON.stringify(body.body));
 
                         //console.log('Body:' + JSON.stringify(responseBody, null, 4));
-                        const rainToday = body.body[0].value[0][0];
-                        logger.debug('Rain Today for Station ' + stationId + ' is: ' + rainToday);
-                        res(rainToday);
+                        try {
+                            const rainToday = body.body[0].value[0][0];
+                            logger.debug('Rain Today for Station ' + stationId + ' is: ' + rainToday);
+                            res(rainToday);
+                        } catch (e) {
+                            logger.warn('Could not get Rain Today for station ' + stationId + ': ' + e);
+                            res();
+                        }
                         //res(body)
                     } else {
                         logger.info('No body in Rain_Today:' + JSON.stringify(body));
@@ -410,9 +424,14 @@ class NetatmoCrawler extends utils.Adapter {
                         logger.debug('Body Rain_Yesterday:' + JSON.stringify(body.body));
 
                         //console.log('Body:' + JSON.stringify(responseBody, null, 4));
-                        const rainYesterday = body.body[0].value[0][0];
-                        logger.debug('Rain Yesterday for Station ' + stationId + ' is: ' + rainYesterday);
-                        res(rainYesterday);
+                        try {
+                            const rainYesterday = body.body[0].value[0][0];
+                            logger.debug('Rain Yesterday for Station ' + stationId + ' is: ' + rainYesterday);
+                            res(rainYesterday);
+                        } catch (e) {
+                            logger.warn('Could not get Rain Yesterday for station ' + stationId + ': ' + e);
+                            res();
+                        }
                         //res(body)
                     } else {
                         logger.info('No body in Rain_Yesterday:' + JSON.stringify(body));

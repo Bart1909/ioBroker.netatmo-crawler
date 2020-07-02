@@ -158,6 +158,18 @@
                 "es": "Agrega marcas de tiempo, cuando la última información recuperada de Netatmo y la marca de tiempo, cuando cada medida se actualizó por última vez. Además, se agregó rain_yesterday",
                 "pl": "Dodaje znaczniki czasu, gdy ostatnia informacja została pobrana z Netatmo i znacznik czasu, kiedy każda miara była ostatnio aktualizowana. Ponadto dodano rain_yesterday",
                 "zh-cn": "从Netatmo检索到最后一个信息时添加时间戳，最后一次更新每个度量时则添加时间戳。另外，是否添加了rain_yesterday"
+            },
+            "0.3.1": {
+                "en": "optimizes error handling",
+                "de": "optimiert die Fehlerbehandlung",
+                "ru": "оптимизирует обработку ошибок",
+                "pt": "otimiza o tratamento de erros",
+                "nl": "optimaliseert foutafhandeling",
+                "fr": "optimise la gestion des erreurs",
+                "it": "ottimizza la gestione degli errori",
+                "es": "optimiza el manejo de errores",
+                "pl": "optymalizuje obsługę błędów",
+                "zh-cn": "优化错误处理"
             }
         },
         "title": "Netatmo Crawler",

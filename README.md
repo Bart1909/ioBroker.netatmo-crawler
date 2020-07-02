@@ -39,6 +39,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 ## Changelog
 
+### 0.3.1
+* (Bart19) optimizes error handling
 ### 0.3.0
 * (Bart19) adds timestamps, when last info retrieved from Netatmo and timestamp, when each measure was updated last. In addition, rain_yesterday added
 ### 0.2.0
