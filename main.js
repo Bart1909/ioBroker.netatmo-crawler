@@ -132,7 +132,7 @@ class NetatmoCrawler extends utils.Adapter {
                             rainYesterday = await this.getRainYesterday(stationData.measures, stationid, token);
                         }
                         if (rainYesterday !== null) {
-                            await this.saveMeasure(id, 'rain_yesterday', rainToday);
+                            await this.saveMeasure(id, 'rain_yesterday', rainYesterday);
                             logger.debug('Saved rain_yesterday for station: ' + id);
                             await this.saveMeasure(id, 'lastUpdated.rain_yesterday', moment().valueOf());
                         }

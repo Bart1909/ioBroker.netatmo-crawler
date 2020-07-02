@@ -39,6 +39,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 ## Changelog
 
+### 0.3.2
+* (Bart19) fixes, that rain_yesterday was saved with value rain_today
 ### 0.3.1
 * (Bart19) optimizes error handling
 ### 0.3.0

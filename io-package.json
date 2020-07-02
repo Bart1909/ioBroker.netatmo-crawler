@@ -170,6 +170,18 @@
                 "es": "optimiza el manejo de errores",
                 "pl": "optymalizuje obsługę błędów",
                 "zh-cn": "优化错误处理"
+            },
+            "0.3.2": {
+                "en": "fixes, that rain_yesterday was saved with value rain_today",
+                "de": "behebt, dass rain_yesterday mit dem Wert rain_today gespeichert wurde",
+                "ru": "исправляет, что rain_yesчера был сохранен со значением rain_today",
+                "pt": "correções, que rain_yesterday foi salvo com o valor rain_today",
+                "nl": "opgelost, dat rain_yesterday werd opgeslagen met waarde rain_today",
+                "fr": "fixe, que rain_yesterday a été enregistré avec la valeur rain_today",
+                "it": "correzioni, che rain_yesterday è stato salvato con il valore rain_today",
+                "es": "arreglos, que rain_yesterday se guardó con el valor rain_today",
+                "pl": "poprawki, że wczorajszy deszcz został zapisany z wartością deszczowy dzisiaj",
+                "zh-cn": "修复，那个rain_yesterday被保存为rain_today值"
             }
         },
         "title": "Netatmo Crawler",
@@ -223,11 +235,9 @@
         "connectionType": "cloud",
         "dataSource": "poll",
         "materialize": true,
-        "dependencies": [
-            {
-                "js-controller": ">=2.0.0"
-            }
-        ]
+        "dependencies": [{
+            "js-controller": ">=2.0.0"
+        }]
     },
     "native": {
         "stationUrls": "",
