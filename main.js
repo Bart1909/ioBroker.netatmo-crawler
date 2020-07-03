@@ -40,8 +40,8 @@ class NetatmoCrawler extends utils.Adapter {
 
         // The adapters config (in the instance object everything under the attribute 'native') is accessible via
         // this.config:
-        this.log.info('config stationUrls: ' + this.config.stationUrls);
-        this.log.info('config stationNameType: ' + this.config.stationNameType);
+        this.log.debug('config stationUrls: ' + this.config.stationUrls);
+        this.log.debug('config stationNameType: ' + this.config.stationNameType);
         const regex = /(https:\/\/weathermap\.netatmo\.com\/\/[-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g;
         const stationUrls = this.config.stationUrls.match(regex) || [];
 
@@ -85,7 +85,7 @@ class NetatmoCrawler extends utils.Adapter {
 
 
     async getStationData(id, url, token, stationNameType) {
-        logger.info('Going to get information for station: ' + id);
+        logger.debug('Going to get information for station: ' + id);
         let stationid = this.getStationId(url);
         let stationData = await this.getPublicData(stationid, token);
         if (!stationData) {
@@ -94,7 +94,7 @@ class NetatmoCrawler extends utils.Adapter {
             stationData = await this.getPublicData(stationid, token);
         }
         if (stationData && stationData.measures) {
-            logger.info('Saving station data for station: ' + id);
+            logger.debug('Saving station data for station: ' + id);
             if (stationNameType === 'id') {
                 id = stationid;
             }
@@ -121,7 +121,7 @@ class NetatmoCrawler extends utils.Adapter {
                             await this.sleep(1000);
                             rainToday = await this.getRainToday(stationData.measures, stationid, token);
                         }
-                        if (rainToday !== null) {
+                        if (rainToday != null) {
                             await this.saveMeasure(id, 'rain_today', rainToday);
                             logger.debug('Saved rain_today for station: ' + id);
                             await this.saveMeasure(id, 'lastUpdated.rain_today', moment().valueOf());
@@ -131,7 +131,7 @@ class NetatmoCrawler extends utils.Adapter {
                             await this.sleep(1000);
                             rainYesterday = await this.getRainYesterday(stationData.measures, stationid, token);
                         }
-                        if (rainYesterday !== null) {
+                        if (rainYesterday != null) {
                             await this.saveMeasure(id, 'rain_yesterday', rainYesterday);
                             logger.debug('Saved rain_yesterday for station: ' + id);
                             await this.saveMeasure(id, 'lastUpdated.rain_yesterday', moment().valueOf());
