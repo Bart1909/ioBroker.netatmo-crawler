@@ -114,8 +114,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 
 
-Changelog
-=========
+## Changelog
+
 
 ### 0.3.3
 * (Bart19) changes some log level
@@ -151,8 +151,8 @@ Changelog
 ### 0.0.1
 * (Bart19) initial release
 
-License
-=======
+## License
+
 MIT License
 
 Copyright (c) 2020 Bart19 <webmaster@bart19.de>
