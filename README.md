@@ -83,7 +83,7 @@ windchill1 = windchill(temp, windkmh); //Vars to-from IOBroker
 
 function windchill(temperature, windspeed) {
 	var windchill = 13.12 + 0.6215 * temperature - 11.37 * Math.pow(windspeed, 0.16) + 0.3965 * 
-					temperature * Math.pow(windspeed, 0.16);
+			temperature * Math.pow(windspeed, 0.16);
 	return windchill;
 }
 
@@ -91,10 +91,10 @@ heatindex1 = heatindex(temp, hum); //Vars to-from IOBroker
 
 function heat(temperature, humidity) {
 	var heatindex = -8.784695 + 1.61139411 * temperature + 2.338549 * humidity - 0.14611605 * 
-					temperature * humidity - 0.012308094 * (temperature * temperature) - 
-					0.016424828 * (humidity * humidity) + 0.002211732* (temperature *
-					temperature) * humidity + 0.00072546 * temperature * (humidity * humidity)
-					- 0.000003582 * (temperature * temperature) * (humidity * humidity);
+			temperature * humidity - 0.012308094 * (temperature * temperature) - 
+			0.016424828 * (humidity * humidity) + 0.002211732* (temperature *
+			temperature) * humidity + 0.00072546 * temperature * (humidity * humidity)
+			- 0.000003582 * (temperature * temperature) * (humidity * humidity);
 	return heatindex;
 }
 ```
