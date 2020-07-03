@@ -3,8 +3,8 @@
 
 [![NPM version](http://img.shields.io/npm/v/iobroker.netatmo-crawler.svg)](https://www.npmjs.com/package/iobroker.netatmo-crawler)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.netatmo-crawler.svg)](https://www.npmjs.com/package/iobroker.netatmo-crawler)
-<!-- ![Number of Installations (latest)](http://iobroker.live/badges/netatmo-crawler-installed.svg)
-![Number of Installations (stable)](http://iobroker.live/badges/netatmo-crawler-stable.svg) -->
+![Number of Installations (latest)](http://iobroker.live/badges/netatmo-crawler-installed.svg)
+<!-- ![Number of Installations (stable)](http://iobroker.live/badges/netatmo-crawler-stable.svg) -->
 [![Dependency Status](https://img.shields.io/david/Bart1909/iobroker.netatmo-crawler.svg)](https://david-dm.org/Bart1909/iobroker.netatmo-crawler)
 [![Known Vulnerabilities](https://snyk.io/test/github/Bart1909/ioBroker.netatmo-crawler/badge.svg)](https://snyk.io/test/github/Bart1909/ioBroker.netatmo-crawler)
 [![Build Status](https://travis-ci.org/Bart1909/ioBroker.netatmo-crawler.svg?branch=master)](https://travis-ci.org/Bart1909/ioBroker.netatmo-crawler)
