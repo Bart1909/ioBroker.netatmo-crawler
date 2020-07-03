@@ -182,6 +182,18 @@
                 "es": "arreglos, que rain_yesterday se guardó con el valor rain_today",
                 "pl": "poprawki, że wczorajszy deszcz został zapisany z wartością deszczowy dzisiaj",
                 "zh-cn": "修复，那个rain_yesterday被保存为rain_today值"
+            },
+            "0.3.3": {
+                "en": "changes some log level and adds more documentation",
+                "de": "Ändert einige Protokollstufen und fügt weitere Dokumentation hinzu",
+                "ru": "изменяет некоторый уровень журнала и добавляет больше документации",
+                "pt": "altera algum nível de log e adiciona mais documentação",
+                "nl": "verandert een bepaald logniveau en voegt meer documentatie toe",
+                "fr": "modifie un niveau de journal et ajoute plus de documentation",
+                "it": "modifica alcuni livelli di registro e aggiunge altra documentazione",
+                "es": "cambia algún nivel de registro y agrega más documentación",
+                "pl": "zmienia poziom dziennika i dodaje więcej dokumentacji",
+                "zh-cn": "更改一些日志级别并添加更多文档"
             }
         },
         "title": "Netatmo Crawler",
@@ -235,11 +247,9 @@
         "connectionType": "cloud",
         "dataSource": "poll",
         "materialize": true,
-        "dependencies": [
-            {
-                "js-controller": ">=2.0.0"
-            }
-        ]
+        "dependencies": [{
+            "js-controller": ">=2.0.0"
+        }]
     },
     "native": {
         "stationUrls": "",
