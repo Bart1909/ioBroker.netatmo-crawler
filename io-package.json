@@ -194,6 +194,18 @@
                 "es": "cambia algún nivel de registro y agrega más documentación",
                 "pl": "zmienia poziom dziennika i dodaje więcej dokumentacji",
                 "zh-cn": "更改一些日志级别并添加更多文档"
+            },
+            "0.3.4": {
+                "en": "optimizes error handling",
+                "de": "optimiert die Fehlerbehandlung",
+                "ru": "оптимизирует обработку ошибок",
+                "pt": "otimiza o tratamento de erros",
+                "nl": "optimaliseert foutafhandeling",
+                "fr": "optimise la gestion des erreurs",
+                "it": "ottimizza la gestione degli errori",
+                "es": "optimiza el manejo de errores",
+                "pl": "optymalizuje obsługę błędów",
+                "zh-cn": "优化错误处理"
             }
         },
         "title": "Netatmo Crawler",
@@ -247,11 +259,9 @@
         "connectionType": "cloud",
         "dataSource": "poll",
         "materialize": true,
-        "dependencies": [
-            {
-                "js-controller": ">=2.0.0"
-            }
-        ]
+        "dependencies": [{
+            "js-controller": ">=2.0.0"
+        }]
     },
     "native": {
         "stationUrls": "",

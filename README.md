@@ -117,6 +117,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 Changelog
 =========
 
+### 0.3.4
+* (Bart19) optimizes error handling
 ### 0.3.3
 * (Bart19) changes some log level
 * (Backfisch) adds more documentation

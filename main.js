@@ -41,7 +41,7 @@ class NetatmoCrawler extends utils.Adapter {
         // The adapters config (in the instance object everything under the attribute 'native') is accessible via
         // this.config:
         this.log.debug('config stationUrls: ' + this.config.stationUrls);
-        this.log.debug('config stationNameType: ' + this.config.stationNameType);
+        this.log.debug('Going to save station information with: ' + this.config.stationNameType);
         const regex = /(https:\/\/weathermap\.netatmo\.com\/\/[-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g;
         const stationUrls = this.config.stationUrls.match(regex) || [];
 
@@ -53,7 +53,7 @@ class NetatmoCrawler extends utils.Adapter {
                     try {
                         await this.getStationData((counter + 1), stationUrl, token, this.config.stationNameType);
                     } catch (e) {
-                        this.log.warn('Could not work with station');
+                        this.log.warn('Could not work with station ' + (counter + 1) + ' - Message: ' + e);
                     }
                 }
             }
@@ -241,18 +241,24 @@ class NetatmoCrawler extends utils.Adapter {
                 },
                 async function(error, response, body) {
                     if (error) {
-                        logger.error('Error: ' + error);
                         rej(error);
                     }
                     //console.log('Body:' + body);
-                    const regex = /window.config.accessToken = "(\w*\|\w*)";/;
-                    const match = body.match(regex);
-                    if (match) {
-                        const token = 'Bearer ' + match[1];
-                        logger.debug('Token:' + token);
-                        res(token);
-                    } else {
-                        rej('No authorization token found');
+                    if (!body) {
+                        rej('No body for authorization token found');
+                    }
+                    try {
+                        const regex = /window.config.accessToken = "(\w*\|\w*)";/;
+                        const match = body.match(regex);
+                        if (match) {
+                            const token = 'Bearer ' + match[1];
+                            logger.debug('Token:' + token);
+                            res(token);
+                        } else {
+                            rej('No authorization token found');
+                        }
+                    } catch (e) {
+                        rej('Could not load page to get authorization token');
                     }
 
                 }
@@ -275,10 +281,9 @@ class NetatmoCrawler extends utils.Adapter {
                 },
                 async function(error, response, body) {
                     if (error) {
-                        logger.error('Error:', error);
                         rej(error);
                     }
-                    if (body.body) {
+                    if (body && body.body) {
                         logger.debug('Body:' + JSON.stringify(body.body));
 
                         //console.log('Body:' + JSON.stringify(responseBody, null, 4));
@@ -364,10 +369,9 @@ class NetatmoCrawler extends utils.Adapter {
                 },
                 async function(error, response, body) {
                     if (error) {
-                        logger.error('Error:', error);
                         rej(error);
                     }
-                    if (body.body) {
+                    if (body && body.body) {
                         logger.debug('Body Rain_Today:' + JSON.stringify(body.body));
 
                         //console.log('Body:' + JSON.stringify(responseBody, null, 4));
@@ -417,10 +421,9 @@ class NetatmoCrawler extends utils.Adapter {
                 },
                 async function(error, response, body) {
                     if (error) {
-                        logger.error('Error:', error);
                         rej(error);
                     }
-                    if (body.body) {
+                    if (body && body.body) {
                         logger.debug('Body Rain_Yesterday:' + JSON.stringify(body.body));
 
                         //console.log('Body:' + JSON.stringify(responseBody, null, 4));

@@ -17,6 +17,8 @@ appveyor.yml
 appveyor.yaml
 tmp/
 
+lib/tools_2.js
+
 # Type checking configuration
 tsconfig.json
 tsconfig.*.json
