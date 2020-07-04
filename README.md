@@ -3,8 +3,8 @@
 
 [![NPM version](http://img.shields.io/npm/v/iobroker.netatmo-crawler.svg)](https://www.npmjs.com/package/iobroker.netatmo-crawler)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.netatmo-crawler.svg)](https://www.npmjs.com/package/iobroker.netatmo-crawler)
-<!-- ![Number of Installations (latest)](http://iobroker.live/badges/netatmo-crawler-installed.svg)
-![Number of Installations (stable)](http://iobroker.live/badges/netatmo-crawler-stable.svg) -->
+![Number of Installations (latest)](http://iobroker.live/badges/netatmo-crawler-installed.svg)
+<!-- ![Number of Installations (stable)](http://iobroker.live/badges/netatmo-crawler-stable.svg) -->
 [![Dependency Status](https://img.shields.io/david/Bart1909/iobroker.netatmo-crawler.svg)](https://david-dm.org/Bart1909/iobroker.netatmo-crawler)
 [![Known Vulnerabilities](https://snyk.io/test/github/Bart1909/ioBroker.netatmo-crawler/badge.svg)](https://snyk.io/test/github/Bart1909/ioBroker.netatmo-crawler)
 [![Build Status](https://travis-ci.org/Bart1909/ioBroker.netatmo-crawler.svg?branch=master)](https://travis-ci.org/Bart1909/ioBroker.netatmo-crawler)
@@ -83,7 +83,7 @@ windchill1 = windchill(temp, windkmh); //Vars to-from IOBroker
 
 function windchill(temperature, windspeed) {
 	var windchill = 13.12 + 0.6215 * temperature - 11.37 * Math.pow(windspeed, 0.16) + 0.3965 * 
-					temperature * Math.pow(windspeed, 0.16);
+			temperature * Math.pow(windspeed, 0.16);
 	return windchill;
 }
 
@@ -91,10 +91,10 @@ heatindex1 = heatindex(temp, hum); //Vars to-from IOBroker
 
 function heat(temperature, humidity) {
 	var heatindex = -8.784695 + 1.61139411 * temperature + 2.338549 * humidity - 0.14611605 * 
-					temperature * humidity - 0.012308094 * (temperature * temperature) - 
-					0.016424828 * (humidity * humidity) + 0.002211732* (temperature *
-					temperature) * humidity + 0.00072546 * temperature * (humidity * humidity)
-					- 0.000003582 * (temperature * temperature) * (humidity * humidity);
+			temperature * humidity - 0.012308094 * (temperature * temperature) - 
+			0.016424828 * (humidity * humidity) + 0.002211732* (temperature *
+			temperature) * humidity + 0.00072546 * temperature * (humidity * humidity)
+			- 0.000003582 * (temperature * temperature) * (humidity * humidity);
 	return heatindex;
 }
 ```
@@ -114,8 +114,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 
 
-Changelog
-=========
+## Changelog
+
 
 ### 0.3.4
 * (Bart19) optimizes error handling
@@ -153,8 +153,8 @@ Changelog
 ### 0.0.1
 * (Bart19) initial release
 
-License
-=======
+## License
+
 MIT License
 
 Copyright (c) 2020 Bart19 <webmaster@bart19.de>
