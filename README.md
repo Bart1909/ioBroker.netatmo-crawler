@@ -47,7 +47,7 @@ To find the url of your preferred weather station, follow these steps:
 
 4. Insert the link in the instance settings of the adapter
 
-   ![Insert](img/share.jpg)
+   ![Insert](img/insert.jpg)
 
 General information
 ===================
