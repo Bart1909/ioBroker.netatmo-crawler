@@ -237,18 +237,22 @@ class NetatmoCrawler extends utils.Adapter {
         return new Promise((res, rej) => {
             request({
                     url: 'https://weathermap.netatmo.com/',
+                    headers: {
+                        'Accept-Language': 'de-DE,de;q=0.9,en;q=0.8,en-US;q=0.7'
+                    },
                     rejectUnauthorized: false,
                 },
+
                 async function(error, response, body) {
                     if (error) {
                         rej(error);
                     }
-                    //console.log('Body:' + body);
+                    //logger.debug('Body:' + body);
                     if (!body) {
                         rej('No body for authorization token found');
                     }
                     try {
-                        const regex = /window.config.accessToken = "(\w*\|\w*)";/;
+                        const regex = /accessToken: "(\w*\|\w*)"/;
                         const match = body.match(regex);
                         if (match) {
                             const token = 'Bearer ' + match[1];
@@ -371,8 +375,9 @@ class NetatmoCrawler extends utils.Adapter {
                     if (error) {
                         rej(error);
                     }
+                    logger.debug('Body Rain_Today:' + JSON.stringify(body));
                     if (body && body.body) {
-                        logger.debug('Body Rain_Today:' + JSON.stringify(body.body));
+
 
                         //console.log('Body:' + JSON.stringify(responseBody, null, 4));
                         try {
