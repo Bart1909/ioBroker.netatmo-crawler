@@ -119,6 +119,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 ## Changelog
 
+### 0.3.7
+* (Bart19) caches authorization token
 ### 0.3.6
 * (Bart19) adds Sentry for error reporting
 ### 0.3.5

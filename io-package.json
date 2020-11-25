@@ -230,6 +230,18 @@
                 "es": "agrega Sentry para informar errores",
                 "pl": "dodaje Sentry do raportowania błędów",
                 "zh-cn": "添加Sentry进行错误报告"
+            },
+            "0.3.7": {
+                "en": "caches authorization token",
+                "de": "Caches Autorisierungstoken",
+                "ru": "кеширует токен авторизации",
+                "pt": "caches token de autorização",
+                "nl": "caches autorisatie token",
+                "fr": "met en cache le jeton d'autorisation",
+                "it": "memorizza nella cache il token di autorizzazione",
+                "es": "almacena en caché el token de autorización",
+                "pl": "buforuje token autoryzacyjny",
+                "zh-cn": "缓存授权令牌"
             }
         },
         "title": "Netatmo Crawler",

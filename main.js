@@ -11,8 +11,10 @@ const utils = require('@iobroker/adapter-core');
 const url = require('url');
 const moment = require('moment');
 const request = require('request');
+const { Adapter } = require('@iobroker/adapter-core');
 
 let logger;
+let myAdapter;
 
 // Load your modules here, e.g.:
 // const fs = require('fs');
@@ -37,6 +39,7 @@ class NetatmoCrawler extends utils.Adapter {
         // Initialize your adapter here
 
         logger = this.log;
+        myAdapter = this;
 
         // The adapters config (in the instance object everything under the attribute 'native') is accessible via
         // this.config:
@@ -46,7 +49,7 @@ class NetatmoCrawler extends utils.Adapter {
         const stationUrls = this.config.stationUrls.match(regex) || [];
 
         try {
-            let token = await this.getAuthorizationToken();
+            let token = await this.getAuthorizationToken(this);
             for (const [counter, stationUrl] of stationUrls.entries()) {
                 this.log.debug('Working with stationUrl: ' + stationUrl);
                 if (stationUrl) {
@@ -69,6 +72,8 @@ class NetatmoCrawler extends utils.Adapter {
 
         this.log.debug("all done, exiting");
         this.terminate ? this.terminate(0) : process.exit(0);
+
+
     }
 
     /**
@@ -88,6 +93,8 @@ class NetatmoCrawler extends utils.Adapter {
             callback();
         }
     }
+
+
 
 
     async getStationData(id, url, token, stationNameType) {
@@ -239,41 +246,66 @@ class NetatmoCrawler extends utils.Adapter {
         return stationId;
     }
 
-    getAuthorizationToken() {
-        return new Promise((res, rej) => {
-            request({
-                    url: 'https://weathermap.netatmo.com/',
-                    headers: {
-                        'Accept-Language': 'de-DE,de;q=0.9,en;q=0.8,en-US;q=0.7'
-                    },
-                    rejectUnauthorized: false,
-                },
+    async saveState(name, value) {
+        await this.createOwnState(name, null, 'string', 'text');
+        await this.setStateAsync(name, value);
+    }
 
-                async function(error, response, body) {
-                    if (error) {
-                        rej(error);
-                    }
-                    //logger.debug('Body:' + body);
-                    if (!body) {
-                        rej('No body for authorization token found');
-                    }
-                    try {
-                        const regex = /accessToken: "(\w*\|\w*)"/;
-                        const match = body.match(regex);
-                        if (match) {
-                            const token = 'Bearer ' + match[1];
-                            logger.debug('Token:' + token);
-                            res(token);
-                        } else {
-                            rej('No authorization token found');
-                        }
-                    } catch (e) {
-                        rej('Could not load page to get authorization token');
-                    }
+    getAuthorizationToken(adapter) {
+        return new Promise(async(res, rej) => {
+            const tokenState = 'common.authorisationToken';
+            logger.debug('Trying to get token from state');
+            let token = await adapter.getStateAsync(tokenState);
+            let foundToken = false;
+            if (token &&  null !== token.val) {
 
+                const now = new Date().getTime();
+                if (now < (token.ts + 86400 * 1000)) {
+                    //logger.debug('Token is fresh, using it. Now:' + now + ' Token Timestamp: ' + token.ts + ' Token calculated: ' + (token.ts + 86400 * 1000));
+                    foundToken = true;
+                    res(token.val);
                 }
-            );
+            }
+            if (!foundToken) {
+                logger.debug('Found no token in state, going to get it from website');
+                request({
+                        url: 'https://weathermap.netatmo.com/',
+                        headers: {
+                            'Accept-Language': 'de-DE,de;q=0.9,en;q=0.8,en-US;q=0.7'
+                        },
+                        rejectUnauthorized: false,
+                    },
+
+                    async function(error, response, body) {
+                        if (error) {
+                            rej(error);
+                        }
+                        //logger.debug('Body:' + body);
+
+                        if (!body) {
+                            await adapter.saveState(tokenState, null);
+                            rej('No body for authorization token found.');
+                        }
+                        try {
+                            const regex = /accessToken: "(\w*\|\w*)"/;
+                            const match = body.match(regex);
+                            if (match) {
+                                const token = 'Bearer ' + match[1];
+                                logger.debug('Token:' + token);
+                                await adapter.saveState(tokenState, token);
+                                res(token);
+                            } else {
+                                rej('No authorization token found');
+                            }
+                        } catch (e) {
+                            rej('Could not load page to get authorization token: ' + e);
+                        }
+
+                    }
+                );
+            }
         });
+
     }
 
     getPublicData(stationId, token) {
@@ -306,6 +338,10 @@ class NetatmoCrawler extends utils.Adapter {
                         //res(body)
                     } else {
                         logger.info('No body:' + JSON.stringify(body));
+                        if (body.error && body.error.code === 2) {
+                            logger.debug('Accesstoken is invalid. Going to reset state');
+                            await myAdapter.saveState('common.authorisationToken', null);
+                        }
                         res();
                     }
                 }
