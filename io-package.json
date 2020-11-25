@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "netatmo-crawler",
-        "version": "0.3.6",
+        "version": "0.3.7",
         "news": {
             "0.0.1": {
                 "en": "initial release",
