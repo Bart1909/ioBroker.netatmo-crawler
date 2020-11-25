@@ -58,6 +58,12 @@ class NetatmoCrawler extends utils.Adapter {
                 }
             }
         } catch (e) {
+            if (this.supportsFeature && this.supportsFeature('PLUGINS')) {
+                const sentryInstance = this.getPluginInstance('sentry');
+                if (sentryInstance) {
+                    sentryInstance.getSentryObject().captureException(e);
+                }
+            }
             this.log.error('Error while running Netatmo Crawler. Error Message:' + e);
         }
 
