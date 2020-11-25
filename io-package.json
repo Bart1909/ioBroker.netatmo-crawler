@@ -218,6 +218,18 @@
                 "es": "arreglo para el nuevo sitio web de netatmo",
                 "pl": "poprawka dla nowej strony internetowej netatmo",
                 "zh-cn": "修复新的netatmo网站"
+            },
+            "0.3.6": {
+                "en": "adds Sentry for error reporting",
+                "de": "fügt Sentry für die Fehlerberichterstattung hinzu",
+                "ru": "добавляет Sentry для отчетов об ошибках",
+                "pt": "adiciona Sentry para relatório de erros",
+                "nl": "voegt Sentry toe voor foutrapportage",
+                "fr": "ajoute Sentry pour les rapports d'erreurs",
+                "it": "aggiunge Sentry per la segnalazione degli errori",
+                "es": "agrega Sentry para informar errores",
+                "pl": "dodaje Sentry do raportowania błędów",
+                "zh-cn": "添加Sentry进行错误报告"
             }
         },
         "title": "Netatmo Crawler",
