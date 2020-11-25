@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "netatmo-crawler",
-        "version": "0.3.5",
+        "version": "0.3.6",
         "news": {
             "0.0.1": {
                 "en": "initial release",
@@ -271,9 +271,11 @@
         "connectionType": "cloud",
         "dataSource": "poll",
         "materialize": true,
-        "dependencies": [{
-            "js-controller": ">=2.0.0"
-        }],
+        "dependencies": [
+            {
+                "js-controller": ">=2.0.0"
+            }
+        ],
         "plugins": {
             "sentry": {
                 "dsn": "https://60b4d97e91ca4ab69c9eb33352c20430@o482094.ingest.sentry.io/5531716"
