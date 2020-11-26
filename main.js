@@ -338,7 +338,7 @@ class NetatmoCrawler extends utils.Adapter {
                         //res(body)
                     } else {
                         logger.info('No body:' + JSON.stringify(body));
-                        if (body.error && body.error.code === 2) {
+                        if (body && body.error && body.error.code === 2) {
                             logger.debug('Accesstoken is invalid. Going to reset state');
                             await myAdapter.saveState('common.authorisationToken', null);
                         }

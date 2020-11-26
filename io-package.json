@@ -242,6 +242,18 @@
                 "es": "almacena en caché el token de autorización",
                 "pl": "buforuje token autoryzacyjny",
                 "zh-cn": "缓存授权令牌"
+            },
+            "0.3.8": {
+                "en": "small fix in error handling",
+                "de": "kleine Korrektur in der Fehlerbehandlung",
+                "ru": "небольшое исправление в обработке ошибок",
+                "pt": "pequena correção no tratamento de erros",
+                "nl": "kleine oplossing voor foutafhandeling",
+                "fr": "petite correction dans la gestion des erreurs",
+                "it": "piccola correzione nella gestione degli errori",
+                "es": "pequeña corrección en el manejo de errores",
+                "pl": "mała poprawka w obsłudze błędów",
+                "zh-cn": "小错误处理"
             }
         },
         "title": "Netatmo Crawler",

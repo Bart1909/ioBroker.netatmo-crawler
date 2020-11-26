@@ -119,6 +119,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 ## Changelog
 
+### 0.3.8
+* (Bart19) small fix in error handling
 ### 0.3.7
 * (Bart19) caches authorization token
 ### 0.3.6
