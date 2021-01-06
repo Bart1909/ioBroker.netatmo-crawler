@@ -102,23 +102,23 @@ describe('Test ' + adapterShortName + ' adapter', function() {
         ENABLE THIS WHEN ADAPTER RUNS IN DEAMON MODE TO CHECK THAT IT HAS STARTED SUCCESSFULLY
     */
 
-    it('Test ' + adapterShortName + ' adapter: Check if adapter started', function(done) {
-        this.timeout(60000);
-        checkConnectionOfAdapter(function(res) {
-            if (res) console.log(res);
-            expect(res).not.to.be.equal('Cannot check connection');
-            objects.setObject('system.adapter.test.0', {
-                    common: {
+    // it('Test ' + adapterShortName + ' adapter: Check if adapter started', function(done) {
+    //     this.timeout(60000);
+    //     checkConnectionOfAdapter(function(res) {
+    //         if (res) console.log(res);
+    //         expect(res).not.to.be.equal('Cannot check connection');
+    //         objects.setObject('system.adapter.test.0', {
+    //                 common: {
 
-                    },
-                    type: 'instance'
-                },
-                function() {
-                    states.subscribeMessage('system.adapter.test.0');
-                    done();
-                });
-        });
-    });
+    //                 },
+    //                 type: 'instance'
+    //             },
+    //             function() {
+    //                 states.subscribeMessage('system.adapter.test.0');
+    //                 done();
+    //             });
+    //     });
+    // });
     /*
 
      it('Test ' + adapterShortName + ': check states', function(done) {
