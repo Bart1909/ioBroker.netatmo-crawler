@@ -119,6 +119,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 ## Changelog
 
+### 0.3.11
+* (Bart19) updates dependencies
 ### 0.3.10
 * (Bart19) updates dependencies
 ### 0.3.9

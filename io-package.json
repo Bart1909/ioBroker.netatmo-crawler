@@ -278,6 +278,18 @@
                 "es": "actualiza las dependencias",
                 "pl": "aktualizacje zależności",
                 "zh-cn": "更新依赖关系"
+            },
+            "0.3.11": {
+                "en": "updates dependencies",
+                "de": "aktualisiert Abhängigkeiten",
+                "ru": "обновляет зависимости",
+                "pt": "atualiza dependências",
+                "nl": "werkt afhankelijkheden bij",
+                "fr": "met à jour les dépendances",
+                "it": "aggiorna le dipendenze",
+                "es": "actualiza las dependencias",
+                "pl": "aktualizacje zależności",
+                "zh-cn": "更新依赖关系"
             }
         },
         "title": "Netatmo Crawler",
