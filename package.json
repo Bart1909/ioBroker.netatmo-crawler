@@ -1,6 +1,6 @@
 {
     "name": "iobroker.netatmo-crawler",
-    "version": "0.3.12",
+    "version": "0.3.13",
     "description": "Crawls information from public netatmo stations",
     "author": {
         "name": "Bart19",
