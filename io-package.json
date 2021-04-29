@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "netatmo-crawler",
-        "version": "0.3.12",
+        "version": "0.3.13",
         "news": {
             "0.0.1": {
                 "en": "initial release",
@@ -267,19 +267,7 @@
                 "pl": "aktualizacje zależności",
                 "zh-cn": "更新依赖关系"
             },
-            "0.3.10": {
-                "en": "updates dependencies",
-                "de": "aktualisiert Abhängigkeiten",
-                "ru": "обновляет зависимости",
-                "pt": "atualiza dependências",
-                "nl": "werkt afhankelijkheden bij",
-                "fr": "met à jour les dépendances",
-                "it": "aggiorna le dipendenze",
-                "es": "actualiza las dependencias",
-                "pl": "aktualizacje zależności",
-                "zh-cn": "更新依赖关系"
-            },
-            "0.3.11": {
+            "0.3.13": {
                 "en": "updates dependencies",
                 "de": "aktualisiert Abhängigkeiten",
                 "ru": "обновляет зависимости",
