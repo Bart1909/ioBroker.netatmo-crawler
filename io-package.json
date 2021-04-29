@@ -278,6 +278,18 @@
                 "es": "actualiza las dependencias",
                 "pl": "aktualizacje zależności",
                 "zh-cn": "更新依赖关系"
+            },
+            "0.4.0": {
+                "en": "Rounds values to two decimals",
+                "de": "Rundet Werte auf zwei Dezimalstellen",
+                "ru": "Округляет значения до двух десятичных знаков",
+                "pt": "Arredonda os valores para duas casas decimais",
+                "nl": "Rondt waarden af ​​op twee decimalen",
+                "fr": "Arrondit les valeurs à deux décimales",
+                "it": "Arrotonda i valori a due decimali",
+                "es": "Redondea los valores a dos decimales",
+                "pl": "Zaokrągla wartości do dwóch miejsc po przecinku",
+                "zh-cn": "将值四舍五入到两位小数"
             }
         },
         "title": "Netatmo Crawler",

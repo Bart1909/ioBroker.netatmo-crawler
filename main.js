@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use strict';
 
 /*
@@ -171,33 +172,42 @@ class NetatmoCrawler extends utils.Adapter {
     async saveMeasure(id, measureName, measureValue) {
         if (measureValue !== null) {
             const stateName = 'stationData.' + id + '.' + measureName;
+            let roundValue = false;
             switch (measureName) {
                 case 'rain':
                     await this.createOwnState(stateName, 'mm', 'number', 'value.rain.hour');
+                    roundValue = true;
                     break;
                 case 'rain_today':
                     await this.createOwnState(stateName, 'mm', 'number', 'value.rain.today');
+                    roundValue = true;
                     break;
                 case 'rain_yesterday':
                     await this.createOwnState(stateName, 'mm', 'number', 'value');
+                    roundValue = true;
                     break;
                 case 'pressure':
                     await this.createOwnState(stateName, 'mBar', 'number', 'value.pressure');
+                    roundValue = true;
                     break;
                 case 'temperature':
                     await this.createOwnState(stateName, '°C', 'number', 'value.temperature');
+                    roundValue = true;
                     break;
                 case 'humidity':
                     await this.createOwnState(stateName, '%', 'number', 'value.humidity');
+                    roundValue = true;
                     break;
                 case 'windangle':
                     await this.createOwnState(stateName, null, 'string', 'weather.direction.wind ');
                     break;
                 case 'windstrength':
                     await this.createOwnState(stateName, 'km/h', 'number', 'value.speed.wind');
+                    roundValue = true;
                     break;
                 case 'guststrength':
                     await this.createOwnState(stateName, 'km/h', 'number', 'value.speed.wind.gust');
+                    roundValue = true;
                     break;
                 case 'info.lastInfoRetrieved':
                     await this.createOwnState(stateName, null, 'number', 'date');
@@ -209,6 +219,9 @@ class NetatmoCrawler extends utils.Adapter {
                         await this.createOwnState(stateName, null, 'string', 'text');
                     }
                     break;
+            }
+            if (roundValue) {
+                measureValue = this.roundValue(measureValue);
             }
             await this.setStateAsync(stateName, measureValue);
         }
@@ -509,6 +522,12 @@ class NetatmoCrawler extends utils.Adapter {
         return new Promise((resolve) => {
             setTimeout(resolve, ms);
         });
+    }
+
+    roundValue(val) {
+        const roundedVal = Math.round(val * 100) / 100
+        logger.debug('Rounded value ' + val + ' to ' + roundedVal);
+        return roundedVal;
     }
 }
 

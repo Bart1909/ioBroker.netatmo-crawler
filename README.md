@@ -119,6 +119,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 ## Changelog
 
+### 0.4.0
+* (Bart19) Rounds values to two decimals
 ### 0.3.13
 * (Bart19) updates dependencies
 ### 0.3.9
