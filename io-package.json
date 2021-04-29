@@ -290,6 +290,18 @@
                 "es": "Redondea los valores a dos decimales",
                 "pl": "Zaokrągla wartości do dwóch miejsc po przecinku",
                 "zh-cn": "将值四舍五入到两位小数"
+            },
+            "0.4.1": {
+                "en": "changes exit code and introduces an exit message",
+                "de": "Ändert den Exit-Code und führt eine Exit-Nachricht ein",
+                "ru": "изменяет код выхода и вводит сообщение о выходе",
+                "pt": "altera o código de saída e introduz uma mensagem de saída",
+                "nl": "wijzigt de exitcode en introduceert een exit-bericht",
+                "fr": "change le code de sortie et introduit un message de sortie",
+                "it": "cambia il codice di uscita e introduce un messaggio di uscita",
+                "es": "cambia el código de salida e introduce un mensaje de salida",
+                "pl": "zmienia kod wyjścia i wprowadza komunikat o wyjściu",
+                "zh-cn": "更改退出代码并引入退出消息"
             }
         },
         "title": "Netatmo Crawler",
