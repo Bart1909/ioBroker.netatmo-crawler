@@ -314,6 +314,18 @@
                 "es": "agrega medidas de viento y ráfaga con m / sy no consulta rain_today en los primeros 15 minutos de un día",
                 "pl": "dodaje pomiary wiatru i porywów w m/s i nie wysyła zapytania rain_today przez pierwsze 15 minut dnia",
                 "zh-cn": "添加 m/s 的风和阵风测量，并且在一天的前 15 分钟内不查询rain_today"
+            },
+            "0.5.1": {
+                "en": "updates dependencies",
+                "de": "aktualisiert Abhängigkeiten",
+                "ru": "обновляет зависимости",
+                "pt": "atualiza dependências",
+                "nl": "werkt afhankelijkheden bij",
+                "fr": "met à jour les dépendances",
+                "it": "aggiorna le dipendenze",
+                "es": "actualiza las dependencias",
+                "pl": "aktualizuje zależności",
+                "zh-cn": "更新依赖"
             }
         },
         "title": "Netatmo Crawler",
