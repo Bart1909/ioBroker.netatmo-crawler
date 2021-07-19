@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "netatmo-crawler",
-        "version": "0.4.1",
+        "version": "0.5.0",
         "news": {
             "0.0.1": {
                 "en": "initial release",
@@ -302,6 +302,18 @@
                 "es": "cambia el código de salida e introduce un mensaje de salida",
                 "pl": "zmienia kod wyjścia i wprowadza komunikat o wyjściu",
                 "zh-cn": "更改退出代码并引入退出消息"
+            },
+            "0.5.0": {
+                "en": "adds measures for wind and gust with m/s and do not query rain_today in the first 15 minutes of a day",
+                "de": "fügt Messungen für Wind und Böen mit m/s hinzu und fragt rain_today nicht in den ersten 15 Minuten eines Tages ab",
+                "ru": "добавляет измерения ветра и порыва в м / с и не запрашивает rain_today в первые 15 минут дня",
+                "pt": "adiciona medidas de vento e rajada com m / s e não consulta rain_today nos primeiros 15 minutos de um dia",
+                "nl": "voegt maatregelen toe voor wind en windvlaag met m/s en bevraag regen_today niet in de eerste 15 minuten van een dag",
+                "fr": "ajoute des mesures pour le vent et les rafales avec m/s et n'interroge pas rain_today dans les 15 premières minutes d'une journée",
+                "it": "aggiunge le misure per vento e raffica con m/s e non interroga rain_today nei primi 15 minuti di un giorno",
+                "es": "agrega medidas de viento y ráfaga con m / sy no consulta rain_today en los primeros 15 minutos de un día",
+                "pl": "dodaje pomiary wiatru i porywów w m/s i nie wysyła zapytania rain_today przez pierwsze 15 minut dnia",
+                "zh-cn": "添加 m/s 的风和阵风测量，并且在一天的前 15 分钟内不查询rain_today"
             }
         },
         "title": "Netatmo Crawler",

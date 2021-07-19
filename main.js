@@ -130,20 +130,29 @@ class NetatmoCrawler extends utils.Adapter {
                     }
                     if (measure === 'windangle') {
                         await this.saveMeasure(id, measure, this.getWindrichtungsName(this.getMeasureValue(stationData.measures, measure)));
+                    } else if (measure === 'guststrength' || measure === 'windstrength') {
+                        await this.saveMeasure(id, measure, this.getMeasureValue(stationData.measures, measure));
+                        await this.saveMeasure(id, measure + '2', this.getMeasureValue(stationData.measures, measure));
                     } else {
                         await this.saveMeasure(id, measure, this.getMeasureValue(stationData.measures, measure));
                     }
 
+
                     if (measure === 'rain') {
-                        let rainToday = await this.getRainToday(stationData.measures, stationid, token);
-                        if (rainToday == null) {
-                            await this.sleep(1000);
-                            rainToday = await this.getRainToday(stationData.measures, stationid, token);
-                        }
-                        if (rainToday != null) {
-                            await this.saveMeasure(id, 'rain_today', rainToday);
-                            logger.debug('Saved rain_today for station: ' + id);
-                            await this.saveMeasure(id, 'lastUpdated.rain_today', moment().valueOf());
+                        let startOfDay = moment().startOf('day');
+                        if (startOfDay.add(15, 'minutes').isBefore(moment())) {
+                            let rainToday = await this.getRainToday(stationData.measures, stationid, token);
+                            if (rainToday == null) {
+                                await this.sleep(1000);
+                                rainToday = await this.getRainToday(stationData.measures, stationid, token);
+                            }
+                            if (rainToday != null) {
+                                await this.saveMeasure(id, 'rain_today', rainToday);
+                                logger.debug('Saved rain_today for station: ' + id);
+                                await this.saveMeasure(id, 'lastUpdated.rain_today', moment().valueOf());
+                            }
+                        } else {
+                            logger.debug('Not getting rain today, because it is start of a new day');
                         }
                         let rainYesterday = await this.getRainYesterday(stationData.measures, stationid, token);
                         if (rainYesterday == null) {
@@ -210,8 +219,18 @@ class NetatmoCrawler extends utils.Adapter {
                     await this.createOwnState(stateName, 'km/h', 'number', 'value.speed.wind');
                     roundValue = true;
                     break;
+                case 'windstrength2':
+                    await this.createOwnState(stateName, 'm/s', 'number', 'value.speed.wind');
+                    measureValue = (measureValue * 1000 / 3600);
+                    roundValue = true;
+                    break;
                 case 'guststrength':
                     await this.createOwnState(stateName, 'km/h', 'number', 'value.speed.wind.gust');
+                    roundValue = true;
+                    break;
+                case 'guststrength2':
+                    await this.createOwnState(stateName, 'm/s', 'number', 'value.speed.wind.gust');
+                    measureValue = (measureValue * 1000 / 3600);
                     roundValue = true;
                     break;
                 case 'info.lastInfoRetrieved':
@@ -438,7 +457,10 @@ class NetatmoCrawler extends utils.Adapter {
                     logger.debug('Body Rain_Today:' + JSON.stringify(body));
                     if (body && body.body) {
 
-
+                        if (!body.body[0] || !body.body[0].value) {
+                            logger.debug('No rain today value for Station ' + stationId);
+                            res();
+                        }
                         //console.log('Body:' + JSON.stringify(responseBody, null, 4));
                         try {
                             const rainToday = body.body[0].value[0][0];
