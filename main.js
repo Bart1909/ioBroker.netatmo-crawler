@@ -247,7 +247,7 @@ class NetatmoCrawler extends utils.Adapter {
             if (roundValue) {
                 measureValue = this.roundValue(measureValue);
             }
-            await this.setStateAsync(stateName, measureValue);
+            await this.setStateAsync(stateName, measureValue, true);
         }
 
     }
@@ -257,7 +257,7 @@ class NetatmoCrawler extends utils.Adapter {
             const stateName = 'stationData.' + id + '.lastUpdated.' + measureName;
             await this.createOwnState(stateName, null, 'number', 'date');
             timestamp = Number.parseInt(timestamp) * 1000;
-            await this.setStateAsync(stateName, timestamp);
+            await this.setStateAsync(stateName, timestamp, true);
         }
 
     }
@@ -285,7 +285,7 @@ class NetatmoCrawler extends utils.Adapter {
 
     async saveState(name, value) {
         await this.createOwnState(name, null, 'string', 'text');
-        await this.setStateAsync(name, value);
+        await this.setStateAsync(name, value, true);
     }
 
     getAuthorizationToken(adapter) {
