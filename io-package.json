@@ -326,6 +326,18 @@
                 "es": "actualiza las dependencias",
                 "pl": "aktualizuje zależności",
                 "zh-cn": "更新依赖"
+            },
+            "0.6.0": {
+                "en": "saves states with acknowledgement & updates dependencies and documentation",
+                "de": "speichert Zustände mit Bestätigung und aktualisiert Abhängigkeiten und Dokumentation",
+                "ru": "сохраняет состояния с подтверждением и обновляет зависимости и документацию",
+                "pt": "salva estados com reconhecimento e atualiza dependências e documentação",
+                "nl": "slaat staten op met bevestiging en werkt afhankelijkheden en documentatie bij",
+                "fr": "enregistre les états avec accusé de réception et met à jour les dépendances et la documentation",
+                "it": "salva gli stati con riconoscimento e aggiorna le dipendenze e la documentazione",
+                "es": "guarda estados con reconocimiento y actualiza las dependencias y la documentación",
+                "pl": "zapisuje stany z zależnościami i dokumentacją potwierdzania i aktualizowania",
+                "zh-cn": "使用确认和更新依赖项和文档保存状态"
             }
         },
         "title": "Netatmo Crawler",
