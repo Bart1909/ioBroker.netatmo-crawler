@@ -374,6 +374,18 @@
                 "es": "dependencias de actualizaciones",
                 "pl": "aktualizuje zależności",
                 "zh-cn": "更新依赖项"
+            },
+            "0.7.0": {
+                "en": "saves states as read-only (#23)",
+                "de": "speichert Zustände schreibgeschützt (#23)",
+                "ru": "сохраняет состояния только для чтения (#23)",
+                "pt": "salva estados como somente leitura (#23)",
+                "nl": "slaat staten op als alleen-lezen (#23)",
+                "fr": "enregistre les états en lecture seule (#23)",
+                "it": "salva gli stati come di sola lettura (#23)",
+                "es": "guarda los estados como de solo lectura (#23)",
+                "pl": "zapisuje stany jako tylko do odczytu (#23)",
+                "zh-cn": "将状态保存为只读 (#23)"
             }
         },
         "title": "Netatmo Crawler",

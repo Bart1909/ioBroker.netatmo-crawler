@@ -270,7 +270,7 @@ class NetatmoCrawler extends utils.Adapter {
                 type: type,
                 role: role,
                 read: true,
-                write: true,
+                write: false,
                 unit: unit
             },
             native: {},

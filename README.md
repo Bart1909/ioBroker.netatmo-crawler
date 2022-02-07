@@ -118,6 +118,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 
 ## Changelog
+### 0.7.0
+* (Bart19) saves states as read-only (#23)
 ### 0.6.3
 * (Bart19) updates dependencies
 ### 0.6.2
