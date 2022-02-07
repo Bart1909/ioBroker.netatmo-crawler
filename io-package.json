@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "netatmo-crawler",
-        "version": "0.7.0",
+        "version": "0.7.1",
         "news": {
             "0.5.0": {
                 "en": "adds measures for wind and gust with m/s and do not query rain_today in the first 15 minutes of a day",
