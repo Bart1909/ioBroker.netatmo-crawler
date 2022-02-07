@@ -467,7 +467,7 @@ class NetatmoCrawler extends utils.Adapter {
                             logger.debug('Rain Today for Station ' + stationId + ' is: ' + rainToday);
                             res(rainToday);
                         } catch (e) {
-                            logger.warn('Could not get Rain Today for station ' + stationId + ': ' + e);
+                            logger.info('Could not get Rain Today for station ' + stationId + ': ' + e);
                             res();
                         }
                         //res(body)
@@ -519,7 +519,7 @@ class NetatmoCrawler extends utils.Adapter {
                             logger.debug('Rain Yesterday for Station ' + stationId + ' is: ' + rainYesterday);
                             res(rainYesterday);
                         } catch (e) {
-                            logger.warn('Could not get Rain Yesterday for station ' + stationId + ': ' + e);
+                            logger.info('Could not get Rain Yesterday for station ' + stationId + ': ' + e);
                             res();
                         }
                         //res(body)

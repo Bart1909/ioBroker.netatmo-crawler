@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "netatmo-crawler",
-        "version": "0.6.0",
+        "version": "0.6.1",
         "news": {
             "0.0.1": {
                 "en": "initial release",
@@ -338,6 +338,18 @@
                 "es": "guarda estados con reconocimiento y actualiza las dependencias y la documentación",
                 "pl": "zapisuje stany z zależnościami i dokumentacją potwierdzania i aktualizowania",
                 "zh-cn": "使用确认和更新依赖项和文档保存状态"
+            },
+            "0.6.1": {
+                "en": "updates dependencies and changes some warnings to information level",
+                "de": "aktualisiert Abhängigkeiten und ändert einige Warnungen auf Informationsebene",
+                "ru": "обновляет зависимости и изменяет некоторые предупреждения на информационный уровень",
+                "pt": "atualiza dependências e altera alguns avisos para o nível de informação",
+                "nl": "werkt afhankelijkheden bij en wijzigt enkele waarschuwingen naar informatieniveau",
+                "fr": "met à jour les dépendances et modifie certains avertissements au niveau de l'information",
+                "it": "aggiorna le dipendenze e modifica alcuni avvisi a livello di informazioni",
+                "es": "actualiza dependencias y cambia algunas advertencias a nivel de información",
+                "pl": "aktualizuje zależności i zmienia niektóre ostrzeżenia na poziomie informacyjnym",
+                "zh-cn": "更新依赖关系并将一些警告更改为信息级别"
             }
         },
         "title": "Netatmo Crawler",
