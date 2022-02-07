@@ -118,6 +118,8 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 
 ## Changelog
+### 0.7.1
+* (Bart19) removed old news (#17)
 ### 0.7.0
 * (Bart19) saves states as read-only (#23)
 ### 0.6.3
@@ -189,7 +191,7 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 MIT License
 
-Copyright (c) 2020 Bart19 <webmaster@bart19.de>
+Copyright (c) 2022 Bart19 <webmaster@bart19.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
