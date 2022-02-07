@@ -118,6 +118,10 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 
 
 ## Changelog
+### 0.6.3
+* (Bart19) updates dependencies
+### 0.6.2
+* (Bart19) updates dependencies
 ### 0.6.1
 * (Bart19) updates dependencies and changes some warnings to information level
 ### 0.6.0

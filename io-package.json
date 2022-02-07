@@ -350,6 +350,30 @@
                 "es": "actualiza dependencias y cambia algunas advertencias a nivel de información",
                 "pl": "aktualizuje zależności i zmienia niektóre ostrzeżenia na poziomie informacyjnym",
                 "zh-cn": "更新依赖关系并将一些警告更改为信息级别"
+            },
+            "0.6.2": {
+                "en": "updates dependencies",
+                "de": "aktualisiert Abhängigkeiten",
+                "ru": "обновляет зависимости",
+                "pt": "atualiza dependências",
+                "nl": "werkt afhankelijkheden bij",
+                "fr": "met à jour les dépendances",
+                "it": "aggiorna le dipendenze",
+                "es": "dependencias de actualizaciones",
+                "pl": "aktualizuje zależności",
+                "zh-cn": "更新依赖项"
+            },
+            "0.6.3": {
+                "en": "updates dependencies",
+                "de": "aktualisiert Abhängigkeiten",
+                "ru": "обновляет зависимости",
+                "pt": "atualiza dependências",
+                "nl": "werkt afhankelijkheden bij",
+                "fr": "met à jour les dépendances",
+                "it": "aggiorna le dipendenze",
+                "es": "dependencias de actualizaciones",
+                "pl": "aktualizuje zależności",
+                "zh-cn": "更新依赖项"
             }
         },
         "title": "Netatmo Crawler",
