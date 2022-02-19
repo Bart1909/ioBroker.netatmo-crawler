@@ -164,6 +164,16 @@ class NetatmoCrawler extends utils.Adapter {
                             logger.debug('Saved rain_yesterday for station: ' + id);
                             await this.saveMeasure(id, 'lastUpdated.rain_yesterday', moment().valueOf());
                         }
+                        let rainLastHour = await this.getRainLastHour(stationData.measures, stationid, token);
+                        if (rainLastHour == null) {
+                            await this.sleep(1000);
+                            rainLastHour = await this.getRainLastHour(stationData.measures, stationid, token);
+                        }
+                        if (rainLastHour != null) {
+                            await this.saveMeasure(id, 'rain_lastHour', rainLastHour);
+                            logger.debug('Saved rain_lastHour for station: ' + id);
+                            await this.saveMeasure(id, 'lastUpdated.rain_lastHour', moment().valueOf());
+                        }
                     }
                 }
             }
@@ -198,6 +208,10 @@ class NetatmoCrawler extends utils.Adapter {
                     break;
                 case 'rain_yesterday':
                     await this.createOwnState(stateName, 'mm', 'number', 'value');
+                    roundValue = true;
+                    break;
+                case 'rain_lastHour':
+                    await this.createOwnState(stateName, 'mm', 'number', 'value.rain.hour');
                     roundValue = true;
                     break;
                 case 'pressure':
@@ -525,6 +539,59 @@ class NetatmoCrawler extends utils.Adapter {
                         //res(body)
                     } else {
                         logger.info('No body in Rain_Yesterday:' + JSON.stringify(body));
+                        res();
+                    }
+                }
+            );
+        });
+    }
+
+
+    getRainLastHour(measures, stationId, token) {
+        return new Promise((res, rej) => {
+            //console.log('Getting data for stationid:' + stationId);
+            var start = moment().subtract(1, 'hour').unix();
+            var end = moment().unix();
+            const moduleId = Object.keys(measures).filter((key) => {
+                return measures[key].type.indexOf('rain') !== -1;
+            })[0];
+            const inputObj = {
+                device_id: stationId,
+                module_id: moduleId,
+                scale: '1hour',
+                type: 'sum_rain',
+                real_time: true,
+                date_begin: start.toString(),
+                date_end: end.toString()
+            };
+            //console.log('InputObj:' + JSON.stringify(inputObj));
+            request.post({
+                    url: 'https://app.netatmo.net/api/getmeasure',
+                    rejectUnauthorized: false,
+                    headers: {
+                        Authorization: token,
+                    },
+                    json: inputObj,
+                },
+                async function (error, response, body) {
+                    if (error) {
+                        rej(error);
+                    }
+                    if (body && body.body) {
+                        logger.debug('Body Rain_LastHour:' + JSON.stringify(body.body));
+
+                        //console.log('Body:' + JSON.stringify(responseBody, null, 4));
+                        try {
+                            const rainLastHour = body.body[0].value[0][0];
+                            logger.debug('Rain Last Hour for Station ' + stationId + ' is: ' + rainLastHour);
+                            res(rainLastHour);
+                        } catch (e) {
+                            logger.info('Could not get Rain LastHour for station ' + stationId + ': ' + e);
+                            res();
+                        }
+                        //res(body)
+                    } else {
+                        logger.info('No body in Rain_LastHour:' + JSON.stringify(body));
                         res();
                     }
                 }
