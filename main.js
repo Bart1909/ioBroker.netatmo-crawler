@@ -320,7 +320,7 @@ class NetatmoCrawler extends utils.Adapter {
             if (!foundToken) {
                 logger.debug('Found no token in state, going to get it from website');
                 request({
-                        url: 'https://weathermap.netatmo.com/',
+                        url: 'https://auth.netatmo.com/weathermap/token',
                         headers: {
                             'Accept-Language': 'de-DE,de;q=0.9,en;q=0.8,en-US;q=0.7'
                         },
@@ -338,10 +338,10 @@ class NetatmoCrawler extends utils.Adapter {
                             rej('No body for authorization token found.');
                         }
                         try {
-                            const regex = /accessToken: "(\w*\|\w*)"/;
-                            const match = body.match(regex);
-                            if (match) {
-                                const token = 'Bearer ' + match[1];
+                            logger.debug("Body:" + body);
+                            const innerBody = JSON.parse(body);
+                            if (innerBody && innerBody.body) {
+                                const token = 'Bearer ' + innerBody.body;
                                 logger.debug('Token:' + token);
                                 await adapter.saveState(tokenState, token);
                                 res(token);
