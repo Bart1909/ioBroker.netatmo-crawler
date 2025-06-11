@@ -12,38 +12,42 @@
         "netatmo",
         "crawler",
         "temperature",
-        "weather"
+        "weather",
+        "iobroker"
     ],
+    "engines": {
+        "node": ">=20"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/Bart1909/ioBroker.netatmo-crawler"
     },
     "dependencies": {
-        "@iobroker/adapter-core": "^2.4.0",
-        "moment": "^2.29.1",
+        "@iobroker/adapter-core": "^3.2.3",
+        "moment": "^2.30.1",
         "request": "^2.88.2",
-        "url": "^0.11.0"
+        "url": "^0.11.4"
     },
     "devDependencies": {
-        "@iobroker/testing": "^2.4.4",
-        "@types/chai": "^4.2.17",
-        "@types/chai-as-promised": "^7.1.3",
-        "@types/gulp": "^4.0.8",
-        "@types/mocha": "^8.2.2",
-        "@types/node": "^14.14.43",
-        "@types/proxyquire": "^1.3.28",
-        "@types/sinon": "^9.0.11",
-        "@types/sinon-chai": "^3.2.5",
-        "axios": "^0.21.0",
-        "chai": "^4.3.4",
-        "chai-as-promised": "^7.1.1",
-        "eslint": "^7.25.0",
+        "@iobroker/adapter-dev": "^1.4.0",
+        "@iobroker/testing": "^5.0.4",
+        "@tsconfig/node20": "^20.1.5",
+        "@types/chai": "^4.3.20",
+        "@types/chai-as-promised": "^7.1.8",
+        "@types/mocha": "^10.0.10",
+        "@types/node": "^20.19.0",
+        "@types/proxyquire": "^1.3.31",
+        "@types/sinon": "^17.0.4",
+        "@types/sinon-chai": "^3.2.12",
+        "chai": "^4.5.0",
+        "chai-as-promised": "^7.1.2",
+        "eslint": "^8.57.1",
         "gulp": "^4.0.2",
-        "mocha": "^9.2.0",
+        "mocha": "^10.8.2",
         "proxyquire": "^2.1.3",
-        "sinon": "^9.2.4",
-        "sinon-chai": "^3.6.0",
-        "typescript": "^4.2.4"
+        "sinon": "^19.0.5",
+        "sinon-chai": "^3.7.0",
+        "typescript": "~5.0.4"
     },
     "main": "main.js",
     "scripts": {
@@ -54,8 +58,18 @@
         "test": "node node_modules/mocha/bin/mocha",
         "lint": "eslint",
         "version": "node ./version.js $npm_package_version && git add io-package.json && git commit -m $npm_package_version",
-        "postversion": "git push --follow-tags"
+        "postversion": "git push --follow-tags",
+        "translate": "translate-adapter"
     },
+    "files": [
+        "admin{,/!(src)/**}/!(tsconfig|tsconfig.*|.eslintrc).{json,json5}",
+        "admin{,/!(src)/**}/*.{html,css,png,svg,jpg,js}",
+        "lib/",
+        "www/",
+        "io-package.json",
+        "LICENSE",
+        "main.js"
+    ],
     "bugs": {
         "url": "https://github.com/Bart1909/ioBroker.netatmo-crawler/issues"
     },

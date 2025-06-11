@@ -4,9 +4,9 @@ os:
   - windows
 language: node_js
 node_js:
-  - '12'
-  - '14'
-  - '16'
+  - '20'
+  - '22'
+  - '24'
 cache:
   npm: false
 before_script:

@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "netatmo-crawler",
-        "version": "0.8.1",
+        "version": "0.9.0",
         "news": {
             "0.6.0": {
                 "en": "saves states with acknowledgement & updates dependencies and documentation",
@@ -13,31 +13,8 @@
                 "it": "salva gli stati con riconoscimento e aggiorna le dipendenze e la documentazione",
                 "es": "guarda estados con reconocimiento y actualiza las dependencias y la documentación",
                 "pl": "zapisuje stany z zależnościami i dokumentacją potwierdzania i aktualizowania",
-                "zh-cn": "使用确认和更新依赖项和文档保存状态"
-            },
-            "0.6.1": {
-                "en": "updates dependencies and changes some warnings to information level",
-                "de": "aktualisiert Abhängigkeiten und ändert einige Warnungen auf Informationsebene",
-                "ru": "обновляет зависимости и изменяет некоторые предупреждения на информационный уровень",
-                "pt": "atualiza dependências e altera alguns avisos para o nível de informação",
-                "nl": "werkt afhankelijkheden bij en wijzigt enkele waarschuwingen naar informatieniveau",
-                "fr": "met à jour les dépendances et modifie certains avertissements au niveau de l'information",
-                "it": "aggiorna le dipendenze e modifica alcuni avvisi a livello di informazioni",
-                "es": "actualiza dependencias y cambia algunas advertencias a nivel de información",
-                "pl": "aktualizuje zależności i zmienia niektóre ostrzeżenia na poziomie informacyjnym",
-                "zh-cn": "更新依赖关系并将一些警告更改为信息级别"
-            },
-            "0.6.2": {
-                "en": "updates dependencies",
-                "de": "aktualisiert Abhängigkeiten",
-                "ru": "обновляет зависимости",
-                "pt": "atualiza dependências",
-                "nl": "werkt afhankelijkheden bij",
-                "fr": "met à jour les dépendances",
-                "it": "aggiorna le dipendenze",
-                "es": "dependencias de actualizaciones",
-                "pl": "aktualizuje zależności",
-                "zh-cn": "更新依赖项"
+                "zh-cn": "使用确认和更新依赖项和文档保存状态",
+                "uk": "Збереже держав із залежністю та документацією оновлень та оновлень"
             },
             "0.6.3": {
                 "en": "updates dependencies",
@@ -49,7 +26,8 @@
                 "it": "aggiorna le dipendenze",
                 "es": "dependencias de actualizaciones",
                 "pl": "aktualizuje zależności",
-                "zh-cn": "更新依赖项"
+                "zh-cn": "更新依赖项",
+                "uk": "Оновлення залежності"
             },
             "0.7.0": {
                 "en": "saves states as read-only (#23)",
@@ -61,7 +39,8 @@
                 "it": "salva gli stati come di sola lettura (#23)",
                 "es": "guarda los estados como de solo lectura (#23)",
                 "pl": "zapisuje stany jako tylko do odczytu (#23)",
-                "zh-cn": "将状态保存为只读 (#23)"
+                "zh-cn": "将状态保存为只读 (#23)",
+                "uk": "Збереже штати як лише для читання (№23)"
             },
             "0.7.1": {
                 "en": "Removed old news",
@@ -73,9 +52,10 @@
                 "it": "Rimosse le vecchie notizie",
                 "es": "noticia antigua eliminada",
                 "pl": "Usunięto stare wiadomości",
-                "zh-cn": "删除了旧消息"
+                "zh-cn": "删除了旧消息",
+                "uk": "Видалив старі новини"
             },
-            "0.8.0": {
+            "0.8.1": {
                 "en": "Adds additional 'rain_lastHour' state as 'rain' state is now real time value",
                 "de": "Fügt den zusätzlichen Status „rain_lastHour“ hinzu, da der Status „rain“ jetzt ein Echtzeitwert ist",
                 "ru": "Добавляет дополнительное состояние «rain_lastHour», так как состояние «дождь» теперь является значением в реальном времени.",
@@ -85,10 +65,23 @@
                 "it": "Aggiunge un ulteriore stato \"rain_lastHour\" poiché lo stato \"pioggia\" è ora un valore in tempo reale",
                 "es": "Agrega el estado adicional 'rain_lastHour' ya que el estado 'lluvia' ahora es un valor en tiempo real",
                 "pl": "Dodaje dodatkowy stan „rain_lastHour”, ponieważ stan „deszczu” jest teraz wartością w czasie rzeczywistym",
-                "zh-cn": "添加额外的“rain_lastHour”状态，因为“rain”状态现在是实时值"
+                "zh-cn": "添加额外的“rain_lastHour”状态，因为“rain”状态现在是实时值",
+                "uk": "Додає додатковий стан \"RAIN_LASTHOUR\" як \"дощ\" тепер є цінністю в режимі реального часу"
+            },
+            "0.9.0": {
+                "en": "Update token mechanism to use the new Netatmo API and update dependencies",
+                "de": "Aktualisieren Sie den Token -Mechanismus, um die neue Netatmo -API zu verwenden und Abhängigkeiten zu aktualisieren",
+                "ru": "Обновить механизм токенов для использования нового API Netatmo и обновления зависимостей",
+                "pt": "Atualize o mecanismo de token para usar a nova API do Netatmo e atualizar dependências",
+                "nl": "Update tokenmechanisme om de nieuwe Netatmo API te gebruiken en afhankelijkheden bij te werken",
+                "fr": "Mettre à jour le mécanisme des jetons pour utiliser la nouvelle API NetAtmo et mettre à jour les dépendances",
+                "it": "Aggiorna il meccanismo token per utilizzare la nuova API NetAtmo e aggiornare le dipendenze",
+                "es": "Actualizar el mecanismo de token para usar la nueva API NetATMO y actualizar dependencias",
+                "pl": "Zaktualizuj mechanizm tokena do korzystania z nowego interfejsu API NETATMO i aktualizacji zależności",
+                "uk": "Оновіть механізм маркера для використання нового API Netatmo та оновлення залежностей",
+                "zh-cn": "更新以使用新的NetAtmo API并更新依赖项的机制"
             }
         },
-        "title": "Netatmo Crawler",
         "titleLang": {
             "en": "Netatmo Crawler",
             "de": "Netatmo Crawler",
@@ -99,7 +92,8 @@
             "it": "Netatmo Crawler",
             "es": "Netatmo Crawler",
             "pl": "Netatmo Crawler",
-            "zh-cn": "内塔特莫履带"
+            "zh-cn": "内塔特莫履带",
+            "uk": "Нетатмо гусениця"
         },
         "desc": {
             "en": "Crawls information from public netatmo stations",
@@ -111,7 +105,8 @@
             "it": "Esegue la scansione delle informazioni dalle stazioni pubbliche netatmo",
             "es": "Rastrea información de estaciones públicas de netatmo",
             "pl": "Przeszukuje informacje z publicznych stacji netatmo",
-            "zh-cn": "从Netatmo公用站检索信息"
+            "zh-cn": "从Netatmo公用站检索信息",
+            "uk": "Застосовує інформацію з державних станцій Netatmo"
         },
         "authors": [
             "Bart19 <webmaster@bart19.de>",
@@ -123,14 +118,17 @@
             "temperature",
             "weather"
         ],
-        "license": "MIT",
+        "licenseInformation": {
+            "type": "free",
+            "license": "MIT"
+        },
         "platform": "Javascript/Node.js",
-        "main": "main.js",
         "icon": "netatmo-crawler.png",
         "enabled": true,
         "extIcon": "https://raw.githubusercontent.com/Bart1909/ioBroker.netatmo-crawler/master/admin/netatmo-crawler.png",
         "readme": "https://github.com/Bart1909/ioBroker.netatmo-crawler/blob/master/README.md",
         "loglevel": "info",
+        "tier": 3,
         "mode": "schedule",
         "schedule": "*/5 * * * *",
         "allowInit": true,
@@ -141,7 +139,12 @@
         "materialize": true,
         "dependencies": [
             {
-                "js-controller": ">=2.0.0"
+                "js-controller": ">=6.0.11"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=7.4.10"
             }
         ],
         "plugins": {
