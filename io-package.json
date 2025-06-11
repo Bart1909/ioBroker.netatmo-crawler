@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "netatmo-crawler",
-        "version": "0.8.1",
+        "version": "0.9.0",
         "news": {
             "0.6.0": {
                 "en": "saves states with acknowledgement & updates dependencies and documentation",
