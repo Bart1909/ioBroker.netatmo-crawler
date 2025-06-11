@@ -16,32 +16,6 @@
                 "zh-cn": "使用确认和更新依赖项和文档保存状态",
                 "uk": "Збереже держав із залежністю та документацією оновлень та оновлень"
             },
-            "0.6.1": {
-                "en": "updates dependencies and changes some warnings to information level",
-                "de": "aktualisiert Abhängigkeiten und ändert einige Warnungen auf Informationsebene",
-                "ru": "обновляет зависимости и изменяет некоторые предупреждения на информационный уровень",
-                "pt": "atualiza dependências e altera alguns avisos para o nível de informação",
-                "nl": "werkt afhankelijkheden bij en wijzigt enkele waarschuwingen naar informatieniveau",
-                "fr": "met à jour les dépendances et modifie certains avertissements au niveau de l'information",
-                "it": "aggiorna le dipendenze e modifica alcuni avvisi a livello di informazioni",
-                "es": "actualiza dependencias y cambia algunas advertencias a nivel de información",
-                "pl": "aktualizuje zależności i zmienia niektóre ostrzeżenia na poziomie informacyjnym",
-                "zh-cn": "更新依赖关系并将一些警告更改为信息级别",
-                "uk": "Оновлення залежності та змінюють деякі попередження на рівні інформації"
-            },
-            "0.6.2": {
-                "en": "updates dependencies",
-                "de": "aktualisiert Abhängigkeiten",
-                "ru": "обновляет зависимости",
-                "pt": "atualiza dependências",
-                "nl": "werkt afhankelijkheden bij",
-                "fr": "met à jour les dépendances",
-                "it": "aggiorna le dipendenze",
-                "es": "dependencias de actualizaciones",
-                "pl": "aktualizuje zależności",
-                "zh-cn": "更新依赖项",
-                "uk": "Оновлення залежності"
-            },
             "0.6.3": {
                 "en": "updates dependencies",
                 "de": "aktualisiert Abhängigkeiten",
@@ -81,7 +55,7 @@
                 "zh-cn": "删除了旧消息",
                 "uk": "Видалив старі новини"
             },
-            "0.8.0": {
+            "0.8.1": {
                 "en": "Adds additional 'rain_lastHour' state as 'rain' state is now real time value",
                 "de": "Fügt den zusätzlichen Status „rain_lastHour“ hinzu, da der Status „rain“ jetzt ein Echtzeitwert ist",
                 "ru": "Добавляет дополнительное состояние «rain_lastHour», так как состояние «дождь» теперь является значением в реальном времени.",
@@ -108,7 +82,6 @@
                 "zh-cn": "更新以使用新的NetAtmo API并更新依赖项的机制"
             }
         },
-        "title": "Netatmo Crawler",
         "titleLang": {
             "en": "Netatmo Crawler",
             "de": "Netatmo Crawler",
@@ -145,14 +118,17 @@
             "temperature",
             "weather"
         ],
-        "license": "MIT",
+        "licenseInformation": {
+            "type": "free",
+            "license": "MIT"
+        },
         "platform": "Javascript/Node.js",
-        "main": "main.js",
         "icon": "netatmo-crawler.png",
         "enabled": true,
         "extIcon": "https://raw.githubusercontent.com/Bart1909/ioBroker.netatmo-crawler/master/admin/netatmo-crawler.png",
         "readme": "https://github.com/Bart1909/ioBroker.netatmo-crawler/blob/master/README.md",
         "loglevel": "info",
+        "tier": 3,
         "mode": "schedule",
         "schedule": "*/5 * * * *",
         "allowInit": true,
@@ -164,6 +140,11 @@
         "dependencies": [
             {
                 "js-controller": ">=6.0.11"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=7.4.10"
             }
         ],
         "plugins": {
