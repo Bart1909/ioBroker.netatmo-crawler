@@ -6,21 +6,25 @@
         "name": "Bart19",
         "email": "webmaster@bart19.de"
     },
-    "homepage": "https://github.com/Bart1909/ioBroker.netatmo-crawler",
+    "contributors": [
+        "iobroker-community-adapters <iobroker-community-adapters@gmx.de>",
+        "mcm1957 <iobroker-community-adapters@gmx.de>"
+    ],
+    "homepage": "https://github.com/iobroker-community-adapters/ioBroker.netatmo-crawler",
     "license": "MIT",
     "keywords": [
+        "ioBroker",
         "netatmo",
         "crawler",
         "temperature",
-        "weather",
-        "iobroker"
+        "weather"
     ],
-    "engines": {
-        "node": ">=20"
-    },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Bart1909/ioBroker.netatmo-crawler"
+        "url": "https://github.com/iobroker-community-adapters/ioBroker.netatmo-crawler"
+    },
+    "engines": {
+        "node": ">=20"
     },
     "dependencies": {
         "@iobroker/adapter-core": "^3.2.3",
@@ -50,17 +54,6 @@
         "typescript": "~5.0.4"
     },
     "main": "main.js",
-    "scripts": {
-        "test:js": "mocha --opts test/mocha.custom.opts",
-        "test:package": "mocha test/package --exit",
-        "test:unit": "mocha test/unit --exit",
-        "test:integration": "mocha test/integration --exit",
-        "test": "node node_modules/mocha/bin/mocha",
-        "lint": "eslint",
-        "version": "node ./version.js $npm_package_version && git add io-package.json && git commit -m $npm_package_version",
-        "postversion": "git push --follow-tags",
-        "translate": "translate-adapter"
-    },
     "files": [
         "admin{,/!(src)/**}/!(tsconfig|tsconfig.*|.eslintrc).{json,json5}",
         "admin{,/!(src)/**}/*.{html,css,png,svg,jpg,js}",
@@ -70,8 +63,18 @@
         "LICENSE",
         "main.js"
     ],
+    "scripts": {
+        "test:js": "mocha --config test/mocharc.custom.json \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",
+        "test:package": "mocha test/package --exit",
+        "test:integration": "mocha test/integration --exit",
+        "test": "npm run test:js && npm run test:package",
+        "check": "tsc --noEmit -p tsconfig.check.json",
+        "lint": "eslint -c eslint.config.mjs .",
+        "translate": "translate-adapter",
+        "release": "release-script"
+    },
     "bugs": {
-        "url": "https://github.com/Bart1909/ioBroker.netatmo-crawler/issues"
+        "url": "https://github.com/iobroker-community-adapters/ioBroker.netatmo-crawler/issues"
     },
     "readmeFilename": "README.md"
 }
