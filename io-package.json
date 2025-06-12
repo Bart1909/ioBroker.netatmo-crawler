@@ -110,7 +110,9 @@
         },
         "authors": [
             "Bart19 <webmaster@bart19.de>",
-            "Backfisch88 <backfisch88@bart19.de>"
+            "Backfisch88 <backfisch88@bart19.de>",
+            "mcm1957 <iobroker-community-adapters@gmx.de>",
+            "iobroker-community-adapters <iobroker-community-adapters@gmx.de>"
         ],
         "keywords": [
             "netatmo",
@@ -125,8 +127,8 @@
         "platform": "Javascript/Node.js",
         "icon": "netatmo-crawler.png",
         "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/Bart1909/ioBroker.netatmo-crawler/master/admin/netatmo-crawler.png",
-        "readme": "https://github.com/Bart1909/ioBroker.netatmo-crawler/blob/master/README.md",
+        "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.netatmo-crawler/master/admin/netatmo-crawler.png",
+        "readme": "https://github.com/iobroker-community-adapters/ioBroker.netatmo-crawler/blob/master/README.md",
         "loglevel": "info",
         "tier": 3,
         "mode": "schedule",
@@ -136,7 +138,9 @@
         "compact": true,
         "connectionType": "cloud",
         "dataSource": "poll",
-        "materialize": true,
+        "adminUI": {
+            "config": "materialize"
+        },
         "dependencies": [
             {
                 "js-controller": ">=6.0.11"
@@ -146,12 +150,7 @@
             {
                 "admin": ">=7.4.10"
             }
-        ],
-        "plugins": {
-            "sentry": {
-                "dsn": "https://60b4d97e91ca4ab69c9eb33352c20430@o482094.ingest.sentry.io/5531716"
-            }
-        }
+        ]
     },
     "native": {
         "stationUrls": "",
