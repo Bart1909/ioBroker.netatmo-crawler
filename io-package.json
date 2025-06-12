@@ -1,161 +1,174 @@
 {
-    "common": {
-        "name": "netatmo-crawler",
-        "version": "0.9.0",
-        "news": {
-            "0.6.0": {
-                "en": "saves states with acknowledgement & updates dependencies and documentation",
-                "de": "speichert Zustände mit Bestätigung und aktualisiert Abhängigkeiten und Dokumentation",
-                "ru": "сохраняет состояния с подтверждением и обновляет зависимости и документацию",
-                "pt": "salva estados com reconhecimento e atualiza dependências e documentação",
-                "nl": "slaat staten op met bevestiging en werkt afhankelijkheden en documentatie bij",
-                "fr": "enregistre les états avec accusé de réception et met à jour les dépendances et la documentation",
-                "it": "salva gli stati con riconoscimento e aggiorna le dipendenze e la documentazione",
-                "es": "guarda estados con reconocimiento y actualiza las dependencias y la documentación",
-                "pl": "zapisuje stany z zależnościami i dokumentacją potwierdzania i aktualizowania",
-                "zh-cn": "使用确认和更新依赖项和文档保存状态",
-                "uk": "Збереже держав із залежністю та документацією оновлень та оновлень"
-            },
-            "0.6.3": {
-                "en": "updates dependencies",
-                "de": "aktualisiert Abhängigkeiten",
-                "ru": "обновляет зависимости",
-                "pt": "atualiza dependências",
-                "nl": "werkt afhankelijkheden bij",
-                "fr": "met à jour les dépendances",
-                "it": "aggiorna le dipendenze",
-                "es": "dependencias de actualizaciones",
-                "pl": "aktualizuje zależności",
-                "zh-cn": "更新依赖项",
-                "uk": "Оновлення залежності"
-            },
-            "0.7.0": {
-                "en": "saves states as read-only (#23)",
-                "de": "speichert Zustände schreibgeschützt (#23)",
-                "ru": "сохраняет состояния только для чтения (#23)",
-                "pt": "salva estados como somente leitura (#23)",
-                "nl": "slaat staten op als alleen-lezen (#23)",
-                "fr": "enregistre les états en lecture seule (#23)",
-                "it": "salva gli stati come di sola lettura (#23)",
-                "es": "guarda los estados como de solo lectura (#23)",
-                "pl": "zapisuje stany jako tylko do odczytu (#23)",
-                "zh-cn": "将状态保存为只读 (#23)",
-                "uk": "Збереже штати як лише для читання (№23)"
-            },
-            "0.7.1": {
-                "en": "Removed old news",
-                "de": "Alte Nachrichten entfernt",
-                "ru": "Удалены старые новости",
-                "pt": "Notícias antigas removidas",
-                "nl": "Oud nieuws verwijderd",
-                "fr": "Suppression des anciennes actualités",
-                "it": "Rimosse le vecchie notizie",
-                "es": "noticia antigua eliminada",
-                "pl": "Usunięto stare wiadomości",
-                "zh-cn": "删除了旧消息",
-                "uk": "Видалив старі новини"
-            },
-            "0.8.1": {
-                "en": "Adds additional 'rain_lastHour' state as 'rain' state is now real time value",
-                "de": "Fügt den zusätzlichen Status „rain_lastHour“ hinzu, da der Status „rain“ jetzt ein Echtzeitwert ist",
-                "ru": "Добавляет дополнительное состояние «rain_lastHour», так как состояние «дождь» теперь является значением в реальном времени.",
-                "pt": "Adiciona o estado 'rain_lastHour' adicional, pois o estado 'rain' agora é um valor em tempo real",
-                "nl": "Voegt een extra 'rain_lastHour'-status toe omdat de 'rain'-status nu een realtime waarde is",
-                "fr": "Ajoute un état supplémentaire 'rain_lastHour' car l'état 'rain' est maintenant une valeur en temps réel",
-                "it": "Aggiunge un ulteriore stato \"rain_lastHour\" poiché lo stato \"pioggia\" è ora un valore in tempo reale",
-                "es": "Agrega el estado adicional 'rain_lastHour' ya que el estado 'lluvia' ahora es un valor en tiempo real",
-                "pl": "Dodaje dodatkowy stan „rain_lastHour”, ponieważ stan „deszczu” jest teraz wartością w czasie rzeczywistym",
-                "zh-cn": "添加额外的“rain_lastHour”状态，因为“rain”状态现在是实时值",
-                "uk": "Додає додатковий стан \"RAIN_LASTHOUR\" як \"дощ\" тепер є цінністю в режимі реального часу"
-            },
-            "0.9.0": {
-                "en": "Update token mechanism to use the new Netatmo API and update dependencies",
-                "de": "Aktualisieren Sie den Token -Mechanismus, um die neue Netatmo -API zu verwenden und Abhängigkeiten zu aktualisieren",
-                "ru": "Обновить механизм токенов для использования нового API Netatmo и обновления зависимостей",
-                "pt": "Atualize o mecanismo de token para usar a nova API do Netatmo e atualizar dependências",
-                "nl": "Update tokenmechanisme om de nieuwe Netatmo API te gebruiken en afhankelijkheden bij te werken",
-                "fr": "Mettre à jour le mécanisme des jetons pour utiliser la nouvelle API NetAtmo et mettre à jour les dépendances",
-                "it": "Aggiorna il meccanismo token per utilizzare la nuova API NetAtmo e aggiornare le dipendenze",
-                "es": "Actualizar el mecanismo de token para usar la nueva API NetATMO y actualizar dependencias",
-                "pl": "Zaktualizuj mechanizm tokena do korzystania z nowego interfejsu API NETATMO i aktualizacji zależności",
-                "uk": "Оновіть механізм маркера для використання нового API Netatmo та оновлення залежностей",
-                "zh-cn": "更新以使用新的NetAtmo API并更新依赖项的机制"
-            }
-        },
-        "titleLang": {
-            "en": "Netatmo Crawler",
-            "de": "Netatmo Crawler",
-            "ru": "Нетатмо Краулер",
-            "pt": "Netatmo Crawler",
-            "nl": "Netatmo Crawler",
-            "fr": "Netatmo Crawler",
-            "it": "Netatmo Crawler",
-            "es": "Netatmo Crawler",
-            "pl": "Netatmo Crawler",
-            "zh-cn": "内塔特莫履带",
-            "uk": "Нетатмо гусениця"
-        },
-        "desc": {
-            "en": "Crawls information from public netatmo stations",
-            "de": "Crawlt Informationen von öffentlichen Netatmo-Stationen",
-            "ru": "Сканирует информацию с общественных станций Netatmo",
-            "pt": "Rastreia informações de estações públicas de netatmo",
-            "nl": "Kruipt informatie van openbare netatmo-stations",
-            "fr": "Analyse les informations des stations Netatmo publiques",
-            "it": "Esegue la scansione delle informazioni dalle stazioni pubbliche netatmo",
-            "es": "Rastrea información de estaciones públicas de netatmo",
-            "pl": "Przeszukuje informacje z publicznych stacji netatmo",
-            "zh-cn": "从Netatmo公用站检索信息",
-            "uk": "Застосовує інформацію з державних станцій Netatmo"
-        },
-        "authors": [
-            "Bart19 <webmaster@bart19.de>",
-            "Backfisch88 <backfisch88@bart19.de>",
-            "mcm1957 <iobroker-community-adapters@gmx.de>",
-            "iobroker-community-adapters <iobroker-community-adapters@gmx.de>"
-        ],
-        "keywords": [
-            "netatmo",
-            "crawler",
-            "temperature",
-            "weather"
-        ],
-        "licenseInformation": {
-            "type": "free",
-            "license": "MIT"
-        },
-        "platform": "Javascript/Node.js",
-        "icon": "netatmo-crawler.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.netatmo-crawler/master/admin/netatmo-crawler.png",
-        "readme": "https://github.com/iobroker-community-adapters/ioBroker.netatmo-crawler/blob/master/README.md",
-        "loglevel": "info",
-        "tier": 3,
-        "mode": "schedule",
-        "schedule": "*/5 * * * *",
-        "allowInit": true,
-        "type": "weather",
-        "compact": true,
-        "connectionType": "cloud",
-        "dataSource": "poll",
-        "adminUI": {
-            "config": "materialize"
-        },
-        "dependencies": [
-            {
-                "js-controller": ">=6.0.11"
-            }
-        ],
-        "globalDependencies": [
-            {
-                "admin": ">=7.4.10"
-            }
-        ]
+  "common": {
+    "name": "netatmo-crawler",
+    "version": "1.0.0-alpha.0",
+    "news": {
+      "1.0.0-alpha.0": {
+        "en": "Adapter has been migrated into iobroker-community-adapters organisation.\nAdapter requires node.js 20, js-controller 6.0.11 and dmin 7.4.10 now.\nDependencies have been updated.",
+        "de": "Adapter wurde in die iobroker-community-Adapter-Organisation migriert.\nAdapter erfordert jetzt node.js 20, js-controller 6.0.11 und dmin 7.4.10.\nAbhängigkeiten wurden aktualisiert.",
+        "ru": "Адаптер был перемещен в организацию адаптации сообщества iobroker.\nАдаптер требует node.js 20, js-контроллер 6.0.11 и dmin 7.4.10.\nЗависимости были обновлены.",
+        "pt": "O adaptador foi migrado para a organização de adaptadores da comunidade.\nO adaptador requer nod.js 20, js-controller 6.0.11 e dmin 7.4.10 agora.\nAs dependências foram atualizadas.",
+        "nl": "Adapter is gemigreerd naar iobroker-community-adapters organisatie.\nAdapter vereist node.js 20, js-controller 6.0.11 en dmin 7.4.10 nu.\nAfhankelijkheden zijn bijgewerkt.",
+        "fr": "L'adaptateur a été transféré dans l'organisation iobroker-community-adapters.\nL'adaptateur nécessite node.js 20, js-controller 6.0.11 et dmin 7.4.10 maintenant.\nLes dépendances ont été actualisées.",
+        "it": "L'adattatore è stato migrato nell'organizzazione degli adattatori della comunità iobroker.\nAdattatore richiede node.js 20, js-controller 6.0.11 e dmin 7.4.10 ora.\nLe dipendenze sono state aggiornate.",
+        "es": "El adaptador ha sido migrado en la organización de ibroker-community-adapters.\nAdaptador requiere node.js 20, js-controller 6.0.11 y dmin 7.4.10 ahora.\nSe han actualizado las dependencias.",
+        "pl": "Adapter został przeniesiony do organizacji adapterów społeczności iobrokerowej.\nAdapter wymaga node.js 20, kontroler js- 6.0.11 i dmin 7.4.10 teraz.\nZaktualizowano zależność.",
+        "uk": "Перехідник був мігрований в організацію iobroker-community-adapters.\nАдаптер вимагає node.js 20, js-controller 6.0.11 і dmin 7.4.10 тепер.\nОновлено залежність.",
+        "zh-cn": "适应者已迁移到职业经纪人-社区适应者组织.\n适配器需要节点.js 20,js控制器 6.0.11和dmin 7.4.10 现在.\n附属物已经更新."
+      },
+      "0.6.0": {
+        "en": "saves states with acknowledgement & updates dependencies and documentation",
+        "de": "speichert Zustände mit Bestätigung und aktualisiert Abhängigkeiten und Dokumentation",
+        "ru": "сохраняет состояния с подтверждением и обновляет зависимости и документацию",
+        "pt": "salva estados com reconhecimento e atualiza dependências e documentação",
+        "nl": "slaat staten op met bevestiging en werkt afhankelijkheden en documentatie bij",
+        "fr": "enregistre les états avec accusé de réception et met à jour les dépendances et la documentation",
+        "it": "salva gli stati con riconoscimento e aggiorna le dipendenze e la documentazione",
+        "es": "guarda estados con reconocimiento y actualiza las dependencias y la documentación",
+        "pl": "zapisuje stany z zależnościami i dokumentacją potwierdzania i aktualizowania",
+        "zh-cn": "使用确认和更新依赖项和文档保存状态",
+        "uk": "Збереже держав із залежністю та документацією оновлень та оновлень"
+      },
+      "0.6.3": {
+        "en": "updates dependencies",
+        "de": "aktualisiert Abhängigkeiten",
+        "ru": "обновляет зависимости",
+        "pt": "atualiza dependências",
+        "nl": "werkt afhankelijkheden bij",
+        "fr": "met à jour les dépendances",
+        "it": "aggiorna le dipendenze",
+        "es": "dependencias de actualizaciones",
+        "pl": "aktualizuje zależności",
+        "zh-cn": "更新依赖项",
+        "uk": "Оновлення залежності"
+      },
+      "0.7.0": {
+        "en": "saves states as read-only (#23)",
+        "de": "speichert Zustände schreibgeschützt (#23)",
+        "ru": "сохраняет состояния только для чтения (#23)",
+        "pt": "salva estados como somente leitura (#23)",
+        "nl": "slaat staten op als alleen-lezen (#23)",
+        "fr": "enregistre les états en lecture seule (#23)",
+        "it": "salva gli stati come di sola lettura (#23)",
+        "es": "guarda los estados como de solo lectura (#23)",
+        "pl": "zapisuje stany jako tylko do odczytu (#23)",
+        "zh-cn": "将状态保存为只读 (#23)",
+        "uk": "Збереже штати як лише для читання (№23)"
+      },
+      "0.7.1": {
+        "en": "Removed old news",
+        "de": "Alte Nachrichten entfernt",
+        "ru": "Удалены старые новости",
+        "pt": "Notícias antigas removidas",
+        "nl": "Oud nieuws verwijderd",
+        "fr": "Suppression des anciennes actualités",
+        "it": "Rimosse le vecchie notizie",
+        "es": "noticia antigua eliminada",
+        "pl": "Usunięto stare wiadomości",
+        "zh-cn": "删除了旧消息",
+        "uk": "Видалив старі новини"
+      },
+      "0.8.1": {
+        "en": "Adds additional 'rain_lastHour' state as 'rain' state is now real time value",
+        "de": "Fügt den zusätzlichen Status „rain_lastHour“ hinzu, da der Status „rain“ jetzt ein Echtzeitwert ist",
+        "ru": "Добавляет дополнительное состояние «rain_lastHour», так как состояние «дождь» теперь является значением в реальном времени.",
+        "pt": "Adiciona o estado 'rain_lastHour' adicional, pois o estado 'rain' agora é um valor em tempo real",
+        "nl": "Voegt een extra 'rain_lastHour'-status toe omdat de 'rain'-status nu een realtime waarde is",
+        "fr": "Ajoute un état supplémentaire 'rain_lastHour' car l'état 'rain' est maintenant une valeur en temps réel",
+        "it": "Aggiunge un ulteriore stato \"rain_lastHour\" poiché lo stato \"pioggia\" è ora un valore in tempo reale",
+        "es": "Agrega el estado adicional 'rain_lastHour' ya que el estado 'lluvia' ahora es un valor en tiempo real",
+        "pl": "Dodaje dodatkowy stan „rain_lastHour”, ponieważ stan „deszczu” jest teraz wartością w czasie rzeczywistym",
+        "zh-cn": "添加额外的“rain_lastHour”状态，因为“rain”状态现在是实时值",
+        "uk": "Додає додатковий стан \"RAIN_LASTHOUR\" як \"дощ\" тепер є цінністю в режимі реального часу"
+      },
+      "0.9.0": {
+        "en": "Update token mechanism to use the new Netatmo API and update dependencies",
+        "de": "Aktualisieren Sie den Token -Mechanismus, um die neue Netatmo -API zu verwenden und Abhängigkeiten zu aktualisieren",
+        "ru": "Обновить механизм токенов для использования нового API Netatmo и обновления зависимостей",
+        "pt": "Atualize o mecanismo de token para usar a nova API do Netatmo e atualizar dependências",
+        "nl": "Update tokenmechanisme om de nieuwe Netatmo API te gebruiken en afhankelijkheden bij te werken",
+        "fr": "Mettre à jour le mécanisme des jetons pour utiliser la nouvelle API NetAtmo et mettre à jour les dépendances",
+        "it": "Aggiorna il meccanismo token per utilizzare la nuova API NetAtmo e aggiornare le dipendenze",
+        "es": "Actualizar el mecanismo de token para usar la nueva API NetATMO y actualizar dependencias",
+        "pl": "Zaktualizuj mechanizm tokena do korzystania z nowego interfejsu API NETATMO i aktualizacji zależności",
+        "uk": "Оновіть механізм маркера для використання нового API Netatmo та оновлення залежностей",
+        "zh-cn": "更新以使用新的NetAtmo API并更新依赖项的机制"
+      }
     },
-    "native": {
-        "stationUrls": "",
-        "stationNameType": "counter"
+    "titleLang": {
+      "en": "Netatmo Crawler",
+      "de": "Netatmo Crawler",
+      "ru": "Нетатмо Краулер",
+      "pt": "Netatmo Crawler",
+      "nl": "Netatmo Crawler",
+      "fr": "Netatmo Crawler",
+      "it": "Netatmo Crawler",
+      "es": "Netatmo Crawler",
+      "pl": "Netatmo Crawler",
+      "zh-cn": "内塔特莫履带",
+      "uk": "Нетатмо гусениця"
     },
-    "objects": [],
-    "instanceObjects": []
+    "desc": {
+      "en": "Crawls information from public netatmo stations",
+      "de": "Crawlt Informationen von öffentlichen Netatmo-Stationen",
+      "ru": "Сканирует информацию с общественных станций Netatmo",
+      "pt": "Rastreia informações de estações públicas de netatmo",
+      "nl": "Kruipt informatie van openbare netatmo-stations",
+      "fr": "Analyse les informations des stations Netatmo publiques",
+      "it": "Esegue la scansione delle informazioni dalle stazioni pubbliche netatmo",
+      "es": "Rastrea información de estaciones públicas de netatmo",
+      "pl": "Przeszukuje informacje z publicznych stacji netatmo",
+      "zh-cn": "从Netatmo公用站检索信息",
+      "uk": "Застосовує інформацію з державних станцій Netatmo"
+    },
+    "authors": [
+      "Bart19 <webmaster@bart19.de>",
+      "Backfisch88 <backfisch88@bart19.de>",
+      "mcm1957 <iobroker-community-adapters@gmx.de>",
+      "iobroker-community-adapters <iobroker-community-adapters@gmx.de>"
+    ],
+    "keywords": [
+      "netatmo",
+      "crawler",
+      "temperature",
+      "weather"
+    ],
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
+    "platform": "Javascript/Node.js",
+    "icon": "netatmo-crawler.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.netatmo-crawler/master/admin/netatmo-crawler.png",
+    "readme": "https://github.com/iobroker-community-adapters/ioBroker.netatmo-crawler/blob/master/README.md",
+    "loglevel": "info",
+    "tier": 3,
+    "mode": "schedule",
+    "schedule": "*/5 * * * *",
+    "allowInit": true,
+    "type": "weather",
+    "compact": true,
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "adminUI": {
+      "config": "materialize"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=6.0.11"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=7.4.10"
+      }
+    ]
+  },
+  "native": {
+    "stationUrls": "",
+    "stationNameType": "counter"
+  },
+  "objects": [],
+  "instanceObjects": []
 }

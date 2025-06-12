@@ -1,81 +1,81 @@
 {
-    "name": "iobroker.netatmo-crawler",
-    "version": "0.9.0",
-    "description": "Crawls information from public netatmo stations",
-    "author": {
-        "name": "Bart19",
-        "email": "webmaster@bart19.de"
-    },
-    "contributors": [
-        "iobroker-community-adapters <iobroker-community-adapters@gmx.de>",
-        "mcm1957 <iobroker-community-adapters@gmx.de>"
-    ],
-    "homepage": "https://github.com/iobroker-community-adapters/ioBroker.netatmo-crawler",
-    "license": "MIT",
-    "keywords": [
-        "ioBroker",
-        "netatmo",
-        "crawler",
-        "temperature",
-        "weather"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/iobroker-community-adapters/ioBroker.netatmo-crawler"
-    },
-    "engines": {
-        "node": ">=20"
-    },
-    "dependencies": {
-        "@iobroker/adapter-core": "^3.2.3",
-        "moment": "^2.30.1",
-        "request": "^2.88.2",
-        "url": "^0.11.4"
-    },
-    "devDependencies": {
-        "@alcalzone/release-script": "^3.8.0",
-        "@alcalzone/release-script-plugin-iobroker": "^3.7.2",
-        "@alcalzone/release-script-plugin-license": "^3.7.0",
-        "@alcalzone/release-script-plugin-manual-review": "^3.7.0",
-        "@iobroker/adapter-dev": "^1.4.0",
-        "@iobroker/eslint-config": "^2.0.2",
-        "@iobroker/testing": "^5.0.4",
-        "@tsconfig/node20": "^20.1.5",
-        "@types/chai": "^4.3.20",
-        "@types/chai-as-promised": "^7.1.8",
-        "@types/mocha": "^10.0.10",
-        "@types/node": "^24.0.1",
-        "@types/sinon": "^17.0.4",
-        "@types/sinon-chai": "^3.2.12",
-        "chai": "^4.5.0",
-        "chai-as-promised": "^7.1.2",
-        "mocha": "^11.6.0",
-        "sinon": "^20.0.0",
-        "sinon-chai": "^3.7.0",
-        "typescript": "~5.8.3"
-    },
-    "main": "main.js",
-    "files": [
-        "admin{,/!(src)/**}/!(tsconfig|tsconfig.*|.eslintrc).{json,json5}",
-        "admin{,/!(src)/**}/*.{html,css,png,svg,jpg,js}",
-        "lib/",
-        "www/",
-        "io-package.json",
-        "LICENSE",
-        "main.js"
-    ],
-    "scripts": {
-        "test:js": "mocha --config test/mocharc.custom.json \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",
-        "test:package": "mocha test/package --exit",
-        "test:integration": "mocha test/integration --exit",
-        "test": "npm run test:js && npm run test:package",
-        "check": "tsc --noEmit -p tsconfig.check.json",
-        "lint": "eslint -c eslint.config.mjs .",
-        "translate": "translate-adapter",
-        "release": "release-script"
-    },
-    "bugs": {
-        "url": "https://github.com/iobroker-community-adapters/ioBroker.netatmo-crawler/issues"
-    },
-    "readmeFilename": "README.md"
+  "name": "iobroker.netatmo-crawler",
+  "version": "1.0.0-alpha.0",
+  "description": "Crawls information from public netatmo stations",
+  "author": {
+    "name": "Bart19",
+    "email": "webmaster@bart19.de"
+  },
+  "contributors": [
+    "iobroker-community-adapters <iobroker-community-adapters@gmx.de>",
+    "mcm1957 <iobroker-community-adapters@gmx.de>"
+  ],
+  "homepage": "https://github.com/iobroker-community-adapters/ioBroker.netatmo-crawler",
+  "license": "MIT",
+  "keywords": [
+    "ioBroker",
+    "netatmo",
+    "crawler",
+    "temperature",
+    "weather"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iobroker-community-adapters/ioBroker.netatmo-crawler"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@iobroker/adapter-core": "^3.2.3",
+    "moment": "^2.30.1",
+    "request": "^2.88.2",
+    "url": "^0.11.4"
+  },
+  "devDependencies": {
+    "@alcalzone/release-script": "^3.8.0",
+    "@alcalzone/release-script-plugin-iobroker": "^3.7.2",
+    "@alcalzone/release-script-plugin-license": "^3.7.0",
+    "@alcalzone/release-script-plugin-manual-review": "^3.7.0",
+    "@iobroker/adapter-dev": "^1.4.0",
+    "@iobroker/eslint-config": "^2.0.2",
+    "@iobroker/testing": "^5.0.4",
+    "@tsconfig/node20": "^20.1.5",
+    "@types/chai": "^4.3.20",
+    "@types/chai-as-promised": "^7.1.8",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.0.1",
+    "@types/sinon": "^17.0.4",
+    "@types/sinon-chai": "^3.2.12",
+    "chai": "^4.5.0",
+    "chai-as-promised": "^7.1.2",
+    "mocha": "^11.6.0",
+    "sinon": "^20.0.0",
+    "sinon-chai": "^3.7.0",
+    "typescript": "~5.8.3"
+  },
+  "main": "main.js",
+  "files": [
+    "admin{,/!(src)/**}/!(tsconfig|tsconfig.*|.eslintrc).{json,json5}",
+    "admin{,/!(src)/**}/*.{html,css,png,svg,jpg,js}",
+    "lib/",
+    "www/",
+    "io-package.json",
+    "LICENSE",
+    "main.js"
+  ],
+  "scripts": {
+    "test:js": "mocha --config test/mocharc.custom.json \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",
+    "test:package": "mocha test/package --exit",
+    "test:integration": "mocha test/integration --exit",
+    "test": "npm run test:js && npm run test:package",
+    "check": "tsc --noEmit -p tsconfig.check.json",
+    "lint": "eslint -c eslint.config.mjs .",
+    "translate": "translate-adapter",
+    "release": "release-script"
+  },
+  "bugs": {
+    "url": "https://github.com/iobroker-community-adapters/ioBroker.netatmo-crawler/issues"
+  },
+  "readmeFilename": "README.md"
 }
