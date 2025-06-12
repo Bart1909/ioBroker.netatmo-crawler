@@ -64,14 +64,14 @@ class NetatmoCrawler extends utils.Adapter {
                 }
             }
             this.log.debug("all done, exiting");
-            this.terminate ? this.terminate("Everything done. Going to terminate till next schedule", 11) : process.exit(0);
+            this.terminate ? this.terminate("Everything done. Going to terminate till next schedule", 0) : process.exit(0);
         } catch (e) {
-            if (this.supportsFeature && this.supportsFeature('PLUGINS')) {
-                const sentryInstance = this.getPluginInstance('sentry');
-                if (sentryInstance) {
-                    sentryInstance.getSentryObject().captureException(e);
-                }
-            }
+            // if (this.supportsFeature && this.supportsFeature('PLUGINS')) {
+            //     const sentryInstance = this.getPluginInstance('sentry');
+            //     if (sentryInstance) {
+            //         sentryInstance.getSentryObject().captureException(e);
+            //     }
+            // }
             this.log.error('Error while running Netatmo Crawler. Error Message:' + e);
             this.log.debug("all done, exiting");
             this.terminate ? this.terminate(15) : process.exit(15);
