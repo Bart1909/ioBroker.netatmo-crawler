@@ -50,7 +50,7 @@ class NetatmoCrawler extends utils.Adapter {
         const stationUrls = this.config.stationUrls.match(regex) || [];
 
         if (!stationUrls.length) {
-            this.log.warning(`no valid station urls detected at ${this.config.stationUrls}`);
+            this.log.warn(`no valid station urls detected at ${this.config.stationUrls}`);
         }
 
         try {
