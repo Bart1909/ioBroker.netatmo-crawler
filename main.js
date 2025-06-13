@@ -46,7 +46,7 @@ class NetatmoCrawler extends utils.Adapter {
         // this.config:
         this.log.debug(`config stationUrls: ${this.config.stationUrls}`);
         this.log.debug(`Going to save station information with: ${this.config.stationNameType}`);
-        const regex = /(https:\/\/weathermap\.netatmo\.com\/\/[-a-zA-Z0-9()@:%_+.~#?&//=]*)/g;
+        const regex = /(https:\/\/weathermap\.netatmo\.com\/{1,}[-a-zA-Z0-9()@:%_+.~#?&//=]*)/g;
         const stationUrls = this.config.stationUrls.match(regex) || [];
 
         if (!stationUrls.length) {
