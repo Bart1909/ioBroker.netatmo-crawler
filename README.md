@@ -117,10 +117,10 @@ Many thanks to [backfisch](https://github.com/backfisch88) for the initial idea 
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 1.0.0 (2025-06-13)
 * (Bart1909) A problem handling urls and authentication has been fixed.
 * (mcm1957) Adapter has been migrated into iobroker-community-adapters organisation.
-* (Bart1909) Adapter requires node.js 20, js-controller 6.0.11 and dmin 7.4.10 now.
+* (Bart1909) Adapter requires node.js 20, js-controller 6.0.11 and admin 7.4.10 now.
 * (mcm1957) Dependencies have been updated.
 
 ### 0.8.0
