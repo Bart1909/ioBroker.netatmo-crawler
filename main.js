@@ -49,6 +49,10 @@ class NetatmoCrawler extends utils.Adapter {
         const regex = /(https:\/\/weathermap\.netatmo\.com\/\/[-a-zA-Z0-9()@:%_+.~#?&//=]*)/g;
         const stationUrls = this.config.stationUrls.match(regex) || [];
 
+        if (!stationUrls.length) {
+            this.log.warning(`no valid station urls detected at ${this.config.stationUrls}`);
+        }
+
         try {
             let token = await this.getAuthorizationToken(this);
             for (const [counter, stationUrl] of stationUrls.entries()) {
